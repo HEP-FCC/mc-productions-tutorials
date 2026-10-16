@@ -1,0 +1,26 @@
+# GRID certificates and proxies --- never commit these
+*.p12
+*.pfx
+usercert.pem
+userkey.pem
+x509up_u*
+*.proxy
+
+# DIRAC job outputs and logs
+*.log
+*.tar.gz
+*.jdl.bak
+
+# Datasets
+*.root
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Editor/OS cruft
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
