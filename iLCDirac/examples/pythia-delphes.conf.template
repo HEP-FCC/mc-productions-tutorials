@@ -1,0 +1,31 @@
+# Single-process Pythia8 + Delphes training configuration.
+# Replace the two REPLACE_WITH values before running the local checker.
+# Use the software, campaign and storage values agreed for the session.
+
+[delphesapp]
+ExecutableName = DelphesPythia8_EDM4HEP
+DetectorCard = card_IDEA.tcl
+OutputCard = edm4hep_IDEA.tcl
+Version = key4hep_260408
+
+[Production Parameters]
+machine = ee
+prodGroup = mccontacts_training
+softwareVersion = key4hep_260408
+generatorApplication = delphesapp
+generatorSteeringFile = p8_ee_ZH_ecm240.cmd
+configVersion = key4hep-devel-6
+configPackage = fccConfig
+
+eventsPerJobs = 100
+numberOfTasks = 1
+campaign = REPLACE_WITH_TRAINING_CAMPAIGN
+energies = 240
+processes = ZH
+detectorModel = IDEA
+additionalName = training_REPLACE_WITH_CERN_USERNAME_attempt1
+
+productionLogLevel = VERBOSE
+outputSE = CERN-DST-EOS
+ProdTypes = Gen
+move = False
