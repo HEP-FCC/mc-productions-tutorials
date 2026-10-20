@@ -15,6 +15,8 @@ production** on the GRID to the **publication** of the produced datasets.
 3. The produced files are managed by **Rucio** (not covered yet)
 4. The datasets are published in **DaMI** (former FCC Physics Events website)
 
+Read the [overall workflow and contact responsibilities](DRS/workflow-and-responsibilities.md),
+then continue with the [DRS walkthrough and exercise](DRS/README.md).
 
 ## Structure
 
