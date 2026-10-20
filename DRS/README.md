@@ -7,7 +7,6 @@ The DRS records FCC dataset requests, their review and the references needed to 
 
 - [Production DRS](https://fcc-drs.web.cern.ch/)
 - [Test DRS](https://fcc-drs-test.web.cern.ch/)
-- [Training slides: workflow and DRS](FCC_MC_Contacts_Workflow_DRS.pptx)
 - [Overall workflow and contact responsibilities](workflow-and-responsibilities.md)
 
 **For the practical session:** use the instance and demonstration request identified by the instructor. The exercise also works as a worksheet without changing a request. The public source lists the test instance, but its availability and deployed version must be checked before the session.
@@ -123,7 +122,7 @@ For a failed or interrupted production, record the relevant identifiers and usef
 
 ## 8. Practical exercise
 
-Work through [the request-review exercise](exercise.md). The exercise uses an illustrative physics request and does not supply a validated production recipe. [Instructor answers](exercise-answers.md) are available for the debrief.
+Work through [the request-review exercise](exercise.md). The exercise uses an illustrative physics request and does not supply a validated production recipe. Discuss your proposed clarifications and next steps with the instructors during the debrief.
 
 ## Help and sources
 
