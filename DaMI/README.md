@@ -1,21 +1,147 @@
-# DaMI
+# DaMI: Dataset Metadata Interface
 
-DaMI (former FCC Physics Events website) is the dataset metadata portal,
-where the produced datasets are published for the analysts.
+Speakers: Pantelis Kontaxakis and Juraj Smiesko  
+Training of the MC Production contacts, Autumn 2026
 
+DaMI is the metadata catalogue for FCC physics datasets, formerly the FCC Physics Events website. It helps analysts find a sample, understand its configuration and identify where its files are stored. The MC Production contact keeps the catalogue record consistent with the production and the original dataset request.
 
-## Step 1: Access
+- [DaMI test instance](https://fcc-dami-test.web.cern.ch/)
+- [FCC Physics Events production portal](https://fcc-physics-events.web.cern.ch/)
+- [DRS walkthrough](../DRS/README.md)
+- [iLCDirac tutorial](../iLCDirac/README.md)
 
-TODO: how to log in and which rights are needed to publish.
+**For the practical session:** use the test instance and dataset identified by the instructors. Make changes only to your designated training record.
 
+## 1. Access and responsibilities
 
-## Step 2: Publishing a dataset
+Open the agreed instance. In the account menu, select **Sign in** and complete CERN authentication. The account badge shows the current role.
 
-TODO: how to publish the datasets of a finished production, and which
-metadata are needed.
+| Role | Relevant capabilities |
+| --- | --- |
+| Viewer | Read and search the catalogue and export metadata. |
+| Editor | Viewer capabilities plus creating datasets, editing metadata and deleting catalogue entries. |
+| Admin | Editor capabilities plus granting and revoking editor access through **Users**. |
 
+A signed-in user without an editor or administrator grant has the viewer role. Ask a DaMI administrator to grant editor access to your CERN username if you need to maintain dataset records. DaMI roles are separate from DRS roles, FCC VO membership and production permissions.
 
-## Step 3: Finding a dataset
+MC contacts need editor access for the creation and editing tasks in this tutorial. With viewer access, you can complete the search, inspection and export steps.
 
-TODO: how analysts find the published datasets, and how FCCAnalyses resolves
-them.
+## 2. Find a dataset and inspect its metadata
+
+1. Use the search field to find the dataset named by the instructor.
+2. Narrow the results using the navigation categories: accelerator, stage, campaign, detector and file type.
+3. Expand the dataset metadata. **All Metadata** can expand the displayed records together.
+4. Read the dataset name, campaign, processing stage, detector, event count and available configuration information.
+5. Inspect the recorded file location and check whether it identifies the required output. A catalogue entry alone does not establish that the files are accessible or validated.
+6. Copy the displayed **UUID** and keep the dataset name and campaign with it. These identify the catalogue record and help distinguish samples with similar names.
+
+Before creating a record, search for the same sample and configuration to avoid duplicates.
+
+## 3. Prepare the publication information
+
+For a real production, complete the agreed output checks before adding or updating its catalogue record. Use the production records and configuration files to establish the values.
+
+| Information | What the contact should check |
+| --- | --- |
+| Dataset name and categories | Agreed name, accelerator, processing stage, campaign, detector and file type. Reuse the agreed category spellings. |
+| Physics definition | Process, collision energy, relevant filters, generator settings and purpose. |
+| Configuration | Generator and detector/card revisions, software release and relevant production settings. |
+| Delivered statistics | Actual usable event count. Distinguish requested, generated and accepted events where relevant. |
+| Normalisation | Cross section, efficiency or weights required by the analysis, including their definitions and units. |
+| File location | The actual location or file-list reference, with access checked using the agreed analysis environment. |
+| Production traceability | Original DRS request, real production/transformation identifiers and validation reference. Agree how these references are recorded. |
+| Limitations | Incomplete statistics, known issues and the intended use of the sample. |
+
+DaMI supports metadata such as `n-events`, `path`, `size`, `description`, `comment` and `status`, and permits additional metadata. Agree the production conventions for extra keys and units. Required form fields are the minimum needed to create a record, not a complete physics-validation checklist.
+
+## 4. Add a dataset
+
+### One dataset through the form
+
+1. Sign in with editor or administrator access.
+2. Select **Add Data** to open **Dataset Tools**. On a narrow screen, this control may appear as an icon.
+3. Select **Add Dataset**.
+4. Enter **Dataset Name** and fill all the displayed category fields. The form allows existing values or new text. Use the agreed values, because new spellings can create new categories.
+5. Enter the agreed extra information in **Metadata (optional JSON object)**. Keep the dataset name and category fields in their dedicated controls.
+6. Review the information, then select **Create Dataset**.
+7. Check the result message, close the dialog and find the new record. Expand it and verify its metadata and UUID.
+
+Creating the record adds metadata to the catalogue. It does not run a production, transfer physics files or validate the sample. For real datasets, coordinate catalogue creation with the production team's publication procedure, including any automatic import already in place.
+
+### Several datasets from JSON
+
+Use this route with a file prepared or reviewed by the production team:
+
+1. Open **Add Data**, then **Bulk Upload (JSON)**.
+2. Select **Select JSON File**. The file must contain an object with a `datasets` array.
+3. Leave **Force Override Locked Fields** unchecked for the training.
+4. Select **Upload Datasets** and inspect the counts of created, updated and failed records, together with any lock conflicts.
+5. Search for each affected dataset and verify the resulting metadata. Entries are processed independently, so a batch can succeed only in part.
+
+An entry without a `uuid` follows the creation route. An entry with a `uuid` targets an existing record and updates its metadata. The update route protects the record's name and category fields and fails if the UUID does not exist. Retain the UUID when updating a record exported from DaMI. Removing it changes the operation to creation.
+
+The exported JSON shape is suitable for the application's import workflow, but review the file before uploading it. A bulk import is a write operation, even when the file originally came from a download.
+
+## 5. Edit an existing record
+
+1. Locate the agreed dataset and expand its metadata.
+2. Note its UUID and retain a copy of the existing metadata, for example by exporting that record.
+3. Select **Edit**, make the agreed change in the JSON editor and select **Save changes**. Use **Cancel** to discard an unfinished edit.
+4. Reload the record and verify that the intended change persists.
+
+Metadata fields can be locked to protect values from later updates. Review a lock conflict with the responsible editor instead of using force override as a routine fix. Changing a stored event count, file path or normalisation value requires checking the corresponding production information.
+
+For the exercise, change only the comment on a designated test record. Dataset deletion is outside the participant exercise.
+
+## 6. Export metadata and hand the sample to an analyst
+
+Select the record's checkbox, open **Actions**, then choose **Download Selected**. **Download All Matching** exports all results matching the current filters, so check the filters before using it.
+
+These actions download dataset metadata as JSON. Obtain the physics event files through the storage location and access method agreed for the production.
+
+The handover to the requester should include:
+
+- Dataset name, campaign and catalogue UUID.
+- The usable file location or file-list reference.
+- Processing stage, event-data format and configuration/software reference.
+- Delivered statistics, normalisation information and validation limitations.
+
+Record the catalogue reference in the original DRS request and tell the requester how to use the output. Follow the agreed DRS completion procedure once the required checks and handover are complete.
+
+## 7. Using the sample in FCCAnalyses
+
+Use DaMI to identify the intended sample and its metadata. The analysis still needs an input configuration that resolves to usable event files.
+
+In the FCCAnalyses version referenced below, the `Analysis` runner supports several input options. Sample inputs can come from a directory, a file list, explicitly supplied files, or campaign metadata. The campaign route resolves a sample through `yaml/<campaign>/<sample>/merge.yaml` in the configured metadata locations. Older analysis scripts may use `prodTag` and `inputDir` conventions instead.
+
+Publishing a DaMI record alone does not establish that this campaign/file-list configuration exists. Likewise, a DaMI metadata export should not be treated as a ready-to-run FCCAnalyses configuration. Use the analysis example and software version provided by the instructors. Check that the configured input resolves to the intended files, then process a small number of events before starting a larger analysis.
+
+## 8. Practical exercise
+
+Estimated time: 10 minutes. Use the designated test instance. The instructor supplies a reference dataset and the category values for any new training record.
+
+1. Find the reference dataset and record its name, campaign, stage, detector, event count and UUID.
+2. Identify its file location and explain which additional information is needed to use it in an analysis.
+3. Export only that dataset using **Download Selected**. Inspect the JSON and identify the UUID and metadata fields.
+4. If the instructor has enabled record creation, use **Add Dataset** to create `training-20261021-<your-CERN-username>` with the agreed test categories. The name is illustrative, not a production naming convention. Use this metadata object:
+
+   ```json
+   {
+     "description": "Training example for MC Production contacts",
+     "comment": "Test metadata record only. No physics files attached."
+   }
+   ```
+
+5. On your training record, use **Edit** to change the comment, save and reload. Leave the reference dataset unchanged.
+6. Explain what remains to be checked before a real dataset can be handed to a requester.
+
+Discuss your answers with the instructors, covering the configuration, file access, statistics and link to the original request. If you have viewer access only, complete steps 1 to 3 and discuss the remaining steps. Follow the instructors' directions for cleanup of your training record.
+
+## Help and sources
+
+For production questions, use the [FCCSW Distributed Computing forum](https://fccsw-forum.web.cern.ch/c/distributed-computing/12) or contact [MC production support](mailto:fcc-ped-softwareandcomputing-mcproduction@cern.ch). Report application problems through [DaMI issues](https://github.com/HEP-FCC/fcc-physics-events/issues), including the action, dataset reference and error message.
+
+Version references for this guide:
+
+- DaMI [`d04fee4`](https://github.com/HEP-FCC/fcc-physics-events/tree/d04fee42070c388ea00231a628abe6e9855af161): [creation and import controls](https://github.com/HEP-FCC/fcc-physics-events/blob/d04fee42070c388ea00231a628abe6e9855af161/frontend/components/EditModal.vue), [upload and export behaviour](https://github.com/HEP-FCC/fcc-physics-events/blob/d04fee42070c388ea00231a628abe6e9855af161/backend/app/routers/entities_router.py), [metadata model](https://github.com/HEP-FCC/fcc-physics-events/blob/d04fee42070c388ea00231a628abe6e9855af161/backend/app/storage/json_data_model.py), [role checks](https://github.com/HEP-FCC/fcc-physics-events/blob/d04fee42070c388ea00231a628abe6e9855af161/backend/app/utils/auth_utils.py) and [editor administration](https://github.com/HEP-FCC/fcc-physics-events/blob/d04fee42070c388ea00231a628abe6e9855af161/frontend/components/UserManagementModal.vue).
+- FCCAnalyses [`37da2c4`](https://github.com/HEP-FCC/FCCAnalyses/tree/37da2c4536533373f082a75c41e5a87208f64d41): [Analysis input resolution](https://github.com/HEP-FCC/FCCAnalyses/blob/37da2c4536533373f082a75c41e5a87208f64d41/python/run_fccanalysis.py) and [sample/file-list helpers](https://github.com/HEP-FCC/FCCAnalyses/blob/37da2c4536533373f082a75c41e5a87208f64d41/python/sample.py).
