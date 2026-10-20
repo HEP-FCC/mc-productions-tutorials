@@ -9,15 +9,15 @@ The DRS records FCC dataset requests, their review and the references needed to 
 - [Test DRS](https://fcc-drs-test.web.cern.ch/)
 - [Overall workflow and contact responsibilities](workflow-and-responsibilities.md)
 
-**For the practical session:** use the instance and demonstration request identified by the instructor. The exercise also works as a worksheet without changing a request. The public source lists the test instance, but its availability and deployed version must be checked before the session.
+**For the practical session:** use the production DRS and the clearly labelled training request identified by the instructors. Keep the agreed training scope and follow their cleanup instructions. If a live exercise is unavailable, use the supplied worksheet.
 
-These instructions follow DRS source commit [`ceaab4a`](https://github.com/HEP-FCC/fcc-drs/tree/ceaab4ab98d478458d559730ccebd299c693c6f8), checked on 19 October 2026. The live interface has not been verified for this draft.
+Version reference: DRS source commit [`ceaab4a`](https://github.com/HEP-FCC/fcc-drs/tree/ceaab4ab98d478458d559730ccebd299c693c6f8).
 
 ## 1. Access and role
 
 1. Open the agreed DRS instance and use **Login** with CERN SSO.
 2. Open **Requests**. A first login normally creates a **requester** account.
-3. Ask a DRS administrator to confirm your **coordinator** role and membership of the appropriate coordinator group for your MC-contact duties.
+3. The instructors will grant **coordinator** access during the training. Confirm your role and the coordinator group for your physics group once access is assigned.
 4. On the demonstration request, check that the coordinator controls are available. The **Campaigns** navigation item is also available to coordinators.
 5. Check your profile notification preferences and the coordinator group shown on the request. Email delivery also depends on the service configuration.
 
@@ -27,21 +27,23 @@ These instructions follow DRS source commit [`ceaab4a`](https://github.com/HEP-F
 | Coordinator | Review and edit requests, record approval decisions, adjust priority/status and group/campaign assignment, add production IDs and use internal notes. |
 | Admin | Coordinator capabilities plus user-role, coordinator-group and campaign administration. |
 
-In the inspected source, coordinator powers apply across requests. A **Coordinator Group** assignment organises responsibility and notifications; it does not restrict the coordinator role to that group's requests. Work on the requests agreed with your group and the organisers.
+Coordinator powers apply across requests. A **Coordinator Group** assignment organises responsibility and notifications; it does not restrict the coordinator role to that group's requests. Work on the requests agreed with your group and the organisers.
 
 DRS permissions are separate from FCC VO membership, iLCDirac production permissions and DaMI editing rights.
 
-## 2. Find an existing request first
+## 2. Start from an existing request
 
-Open **Requests** and use the search and status/priority filters. Look for the same process, energy, detector and sample purpose before creating another request. Open a request to read its description, generator cards, related requests and activity.
+The requester submits the dataset need in the DRS. As the MC contact, open the assigned request and read its description, generator cards, related requests and activity before acting on it.
+
+To look for related work, open **Requests**. The search matches text in the title, description and requester name, with separate status and priority filters. Search for a distinctive term and inspect the returned requests. Compare their process, energy, detector and purpose by reading the full records; do not assume that a search covers every structured field or attachment.
 
 For an existing need, discuss whether to reuse the request, extend the statistics or create a genuinely different configuration. The **Related Requests** control supports **Extends**, **Depends on**, **Variant of** and **Related to**. A reference such as `#123` in description or notes can also create a mention relation.
 
-There is no dedicated duplicate status in this source version. If a request duplicates another, agree which record to retain, link the records and explain the resolution in a comment. Use the agreed status for the redundant request rather than silently removing its history.
+There is no dedicated duplicate status. If a request duplicates another, agree which record to retain, link the records and explain the resolution in a comment. Use the agreed status for the redundant request rather than silently removing its history.
 
 ## 3. Understand and create a request
 
-Select **New Request**. CERN SSO supplies the requester identity.
+The requester selects **New Request** and CERN SSO supplies their identity. MC contacts use the same field descriptions below to review and clarify an existing request.
 
 | Form label | What to enter or check |
 | --- | --- |
@@ -60,7 +62,7 @@ Select **New Request**. CERN SSO supplies the requester identity.
 | Generator Cards | Upload the relevant plain-text configuration files. The interface states a limit of 1 MB per file. Verify that every intended file appears after upload. |
 | Notes / Tags | Additional context and useful search labels. Use the explicit internal-comment option for coordinator-only discussion. |
 
-Use **Save as Draft** while information is incomplete. A draft still needs a title. Use **Submit Request** when the request is ready for review. The source labels the submitted state **Under Review**.
+Use **Save as Draft** while information is incomplete. A draft still needs a title. Use **Submit Request** when the request is ready for review. The submitted state is **Under Review**.
 
 The submission form requires the description, group, use case, final stage, format, statistics and estimated size, plus detector information for stages beyond Generation. Required form fields are a minimum. A runnable production also needs sufficiently precise configuration and validation.
 
@@ -78,15 +80,17 @@ Read the full request and check:
 
 Use **Add a comment…** and **Comment** to ask the requester for clarification. Leave **Internal (coordinators only)** unchecked for a question the requester should see. Internal notes are suitable for coordinator discussion.
 
+During the live exercise, check with the designated recipient that the expected email notification arrives and opens the correct request. If it does not arrive, record the observation and inspect notification preferences with the instructors. A visible comment alone does not prove email delivery.
+
 Keep a request **Under Review** while clarifications or decisions are pending. In the detail page, coordinators can adjust **Coordinator Group** and **Priority** when the responsible people agree the change.
 
 ## 5. Approvals and request status
 
 The request has separate **Physics** and **Resources** approval rows. Each row offers **Approve**, **Reject** or, once a decision exists, **Revert**.
 
-The interface gives coordinators access to both rows. The organisers must agree who is authorised to record each decision. Possessing the button is not itself an assignment of physics or resource responsibility.
+In the current workflow, **Physics approval** can be given by any MC contact of the request's physics group. **Resources approval** is given by the DRS admins. The interface exposes both rows to coordinators, but decisions must follow these responsibilities.
 
-| State or action | Behaviour in the inspected source |
+| State or action | Behaviour |
 | --- | --- |
 | Save as Draft | Keeps an initial request in Draft. |
 | Submit Request | Moves the draft into Under Review, once the required information is present. |
@@ -96,7 +100,7 @@ The interface gives coordinators access to both rows. The organisers must agree 
 | Assign an Approved request to a campaign | Automatically changes the request to In Progress. |
 | Completed, Failed or Cancelled | Available status labels for recording the agreed outcome. |
 
-Coordinators also have a status selector. The source permits manual changes, including exceptions to the normal approval sequence. Teach the approval rows as the normal review procedure and record the reason for an exceptional change. A status label alone does not prove that both approval records are present.
+Coordinators also have a status selector. Manual changes can include exceptions to the normal approval sequence. Use the approval rows for the normal review procedure and record the reason for an exceptional change. A status label alone does not prove that both approval records are present.
 
 **In Progress can mean that the request has entered a campaign. Check iLCDirac to determine whether jobs have actually been submitted or are running.**
 
@@ -107,10 +111,10 @@ After the approvals and campaign placement have been agreed:
 1. Find **Campaign** on the request detail page.
 2. Select the agreed campaign and read the confirmation before applying it. The normal entry point is an Approved request. Assignments belonging to a closed campaign are locked.
 3. Check the campaign name, request status and activity record.
-4. Follow the [iLCDirac tutorial](../iLCDirac/README.md) to prepare, validate and launch the actual production.
+4. As the MC contact, write or adapt the production configuration, check its inputs, run the dry run and submit through the iLCDirac command line. Follow the [iLCDirac tutorial](../iLCDirac/README.md) for the small pilot and subsequent monitoring.
 5. When the production system supplies identifiers, return to the request. **Production IDs** appears when a campaign is assigned.
-6. Enter the real positive numeric identifier, add a label explaining its role and select **Add**. Follow the identifier convention agreed with Juraj for the production/transformation workflow.
-7. Add a comment linking the configuration revision and useful monitoring or validation information.
+6. Enter the real positive numeric **DIRAC transformation ID for each process and each step**, label it with the process and step, and select **Add**. For example, three processes with Gen, Sim and Rec require nine transformation IDs. A label such as `ZH / Gen` identifies the process and step.
+7. Add a comment linking the configuration revision and pilot budget. Inspect the transformation and associated jobs in iLCDirac, and report the observed status and useful validation information.
 
 Entering a production ID stores a reference in the DRS. It does not create the corresponding production. A DRS request number and a job number identify different objects and should be labelled accordingly.
 
@@ -119,6 +123,8 @@ Entering a production ID stores a reference in the DRS. It does not create the c
 The recommended completion check is to confirm the agreed output statistics, file accessibility and validation, then record the dataset reference and any limitations. Follow the [DaMI tutorial](../DaMI/README.md) for publication. Tell the requester where to find the output and record **Completed** according to the agreed campaign procedure.
 
 For a failed or interrupted production, record the relevant identifiers and useful error context. Agree whether the next action is a retry, a revised configuration or a change to the request.
+
+For the training, follow the instructors' cleanup procedure for the labelled requests and corresponding production objects. Setting a DRS request to Cancelled does not cancel its DIRAC transformations or jobs.
 
 ## 8. Practical exercise
 
