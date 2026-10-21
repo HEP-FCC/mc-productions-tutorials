@@ -18,7 +18,9 @@ cp "$tutorial_dir/iLCDirac/examples/pythia-delphes.conf.template" training.conf
 
 Use an empty work directory for your first attempt. If you already have files here, preserve your previous configuration and logs before preparing a new attempt.
 
-Retrieve the three input cards from the pinned source:
+**Training-only card source and layout:** the downloads below reproduce a pinned historical example from FCCDIRAC. For normal productions, obtain the generator card from the requester through the DRS upload or from the maintained "golden cards" in [FCC-config](https://github.com/HEP-FCC/FCC-config). The detector and output cards (`card_IDEA.tcl`, `edm4hep_IDEA.tcl`) should be included in the configuration tarball selected by `configPackage` and `configVersion`. Reading those two cards from the submission directory is a convenience used only for this training. FCCDIRAC serves as the historical record of production configurations.
+
+For this training, retrieve the three input cards from the pinned historical source:
 
 ```bash
 card_source="https://raw.githubusercontent.com/HEP-FCC/FCCDIRAC/d178d5e3e6484a4cb468ef5b1bcfbf117d58b9d6/productions/summer2026/ZH_ZZ_WW"
@@ -35,16 +37,14 @@ Check that all three downloads succeeded. The original card authors and comments
 nano training.conf
 ```
 
-Replace `REPLACE_WITH_TRAINING_CAMPAIGN` with the exact session campaign and `REPLACE_WITH_CERN_USERNAME` with your CERN username. Check the agreed software versions and `outputSE`. Keep the example at **one task and 100 events**.
+Keep `campaign = summer2026` and replace `REPLACE_WITH_CERN_USERNAME` with your CERN username. Check the agreed software versions and `outputSE`. Keep the example at **one task and 100 events**.
+
+The output is stored alongside the summer2026 productions. Retain the unique training suffix and the exact transformation IDs and output paths so the instructors can coordinate cleanup after the session.
 
 The Pythia card contains its original standalone event count. The production workflow supplies the per-task event count from `eventsPerJobs`. Verify the effective count in the pilot log and output.
 
-## Check the local inputs
+## Review the inputs and run the dry run
 
-```bash
-python "$tutorial_dir/iLCDirac/scripts/check_training_config.py" training.conf
-```
+Check that all three local cards are present, the CERN username is filled, the Pythia card's `Beams:eCM` agrees with `energies = 240`, and the configuration still requests one task and 100 events in `summer2026`.
 
-The checker verifies that required values are filled, the tutorial has one task and at most 100 events, the local cards exist, and the Pythia energy matches the configuration. It also checks the intended application and stage selection. It reads only local files and does not submit anything.
-
-Passing this check does not validate the detector response, software availability, proxy, storage permissions or physics. Continue with the [iLCDirac dry run and live pilot](../README.md#4-run-without-creating-a-production).
+Use the existing [iLCDirac dry run](../README.md#4-run-without-creating-a-production) to check the configuration. Inspect its messages and workflow XML before a live submission. A successful dry run checks workflow preparation; the pilot execution and output checks establish whether the sample was produced as intended.

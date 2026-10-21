@@ -34,7 +34,11 @@ ProdTypes = Gen
 
 This produces Delphes output even though the transformation type is `Gen`. Adding `Sim` would request another managed stage; it is not how to turn on the Delphes processing already performed by this executable.
 
-A full-simulation chain can instead have separate stages. For example, the current command supports the following structure:
+## CLD full simulation: follow-up example
+
+CLD full simulation with separate Gen, Sim and Rec stages is part of the campaign baseline. A complete worked CLD example will be added after the training; it is not required for today's live exercise. It will need agreed generation, CLD detector and reconstruction configurations, software versions and a checked pilot.
+
+The current command supports the following stage structure:
 
 ```ini
 generatorApplication = gaudiapp_gen
@@ -62,15 +66,17 @@ The command pairs configured entries; it does not generate every possible proces
 
 ## Cards and version references
 
-The worked example keeps all three cards in the submission directory. The current Delphes application accepts local detector and output cards and adds them to the input sandbox. It reads the Pythia8 card through its card-finding utility. Missing local files can otherwise trigger lookup in configured locations.
+The worked example keeps all three cards in the submission directory as a **training-only shortcut**. The current Delphes application accepts local detector and output cards and adds them to the input sandbox. It reads the Pythia8 card through its card-finding utility. Missing local files can otherwise trigger lookup in configured locations.
 
-Using local copies with known revisions makes the chosen input unambiguous. Record the immutable source commit and your changes. The example's `key4hep_260408` and `key4hep-devel-6` values come from the referenced FCC configuration. Use them only when they match the session's available software and configuration package.
+For normal productions, obtain the generator card from the requester through the DRS upload or from the maintained "golden cards" in [FCC-config](https://github.com/HEP-FCC/FCC-config). Package the detector and output cards in the configuration tarball selected by `configPackage` and `configVersion`. The pinned FCCDIRAC downloads are used only to reproduce the training example; FCCDIRAC records production history.
+
+For the training, local copies with known revisions make the chosen inputs unambiguous. Record the immutable source commit and your changes. The example's `key4hep_260408` and `key4hep-devel-6` values come from the referenced FCC configuration. Use them only when they match the session's available software and configuration package.
 
 Do not use `latest` as the record of a production's software version. Do not add a fixed random seed to make all training jobs identical. Use the production workflow's seed handling and record the production and job IDs.
 
 ## Naming and output location
 
-Use the campaign and process naming agreed with production coordination. These labels contribute to output paths and catalogue metadata. `prodGroup` groups transformations; `additionalName` helps distinguish attempts with otherwise identical names.
+For the training, use `campaign = summer2026` and the agreed process naming. The output is stored alongside summer2026 production output and requires cleanup after the session. These labels contribute to output paths and catalogue metadata. `prodGroup` groups transformations; `additionalName` helps distinguish attempts with otherwise identical names.
 
 Use a unique training suffix containing your CERN username and an attempt label. If a name already exists, inspect that production before deciding to create another one. Changing the suffix and resubmitting can create a second live production.
 

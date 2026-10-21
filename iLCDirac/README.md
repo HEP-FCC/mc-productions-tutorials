@@ -47,7 +47,7 @@ dirac-fcc-make-productions --help
 
 Use the session's client installation if the instructors provide a different setup path. Keep the DIRAC client shell separate from a shell used to set up Key4hep for local event processing.
 
-For production submission, initialise the production proxy:
+Production submission requires membership of the `fcc_prod` group. All MC contacts registered in fcc-auth have been assigned to this group for the training. Initialise the production proxy:
 
 ```bash
 dirac-proxy-init -g fcc_prod
@@ -65,9 +65,11 @@ Follow the [worked example](examples/README.md) to create a work directory conta
 - `card_IDEA.tcl`, the detector card.
 - `edm4hep_IDEA.tcl`, the output-content card.
 
-The example uses one process, one energy point, `eventsPerJobs = 100` and `numberOfTasks = 1`. Keep the full statistics requested in the DRS separate from this pilot budget. Use the campaign, software version and storage element agreed for the session.
+The example uses one process, one energy point, `eventsPerJobs = 100` and `numberOfTasks = 1`. Keep the full statistics requested in the DRS separate from this pilot budget. The training uses `campaign = summer2026`; retain the unique training name and check the software version and storage element agreed for the session. Its output will be stored alongside the summer2026 productions and must be cleaned up after training.
 
-Read [Production configuration](production-config.md), then run the supplied local checker as described in the example. It checks the tutorial configuration and local inputs. It does not contact DIRAC or establish physics correctness.
+The local-card layout and pinned FCCDIRAC downloads are training-only shortcuts. For normal productions, use the requester's DRS generator card or a maintained FCC-config golden card, and include the detector and output cards in the configuration tarball selected by `configPackage` and `configVersion`.
+
+Read [Production configuration](production-config.md), check the local input cards and review the one-task, 100-event pilot budget. Use the iLCDirac dry run below to check the production configuration.
 
 ## 4. Run without creating a production
 
@@ -93,6 +95,8 @@ Review the messages and generated workflow XML. Check:
 A successful dry run checks workflow preparation. The small live pilot checks execution, file transfer and output content. A local generator test or a separately submitted `UserJob` also does not create the central transformation needed here.
 
 ## 5. Create the pilot production
+
+Before submission, import your personal GRID certificate, including its private key, into the browser you will use for the [iLCDirac web portal](https://voilcdiracwebapp2.cern.ch/DIRAC/), then check that you can log in. Browser certificate authentication is separate from the command-line proxy setup.
 
 Once the request is ready for production and the instructors have reviewed the pilot configuration, run:
 
@@ -142,13 +146,21 @@ Read the offered download information before confirming. See [Troubleshooting](t
 
 ## 7. Check the output and update the request
 
+In the web portal, right-click the relevant transformation and open its details to find the output logical file name (LFN). For these central productions, prepend `/eos/experiment/fcc/prod` to the transformation LFN to obtain the full EOS path:
+
+| Transformation LFN | Full EOS path |
+| --- | --- |
+| `/fcc/ee/summer2026/240gev/ZH/IDEA/delphes/...` | `/eos/experiment/fcc/prod/fcc/ee/summer2026/240gev/ZH/IDEA/delphes/...` |
+
+Use the complete actual LFN in place of the abbreviated example. This full EOS path is the value to enter manually in DaMI's `path` metadata.
+
 For the pilot, locate at least one output file and verify that it opens in the agreed analysis environment. Check the event count, expected collections, generator/configuration information and a basic observable appropriate to the sample. Retain the file reference and validation result.
 
 Report separately what is configured, submitted, running and delivered. A successful job status alone is not a physics-validation result.
 
 After the pilot, follow the campaign's agreed scaling procedure. Before retrying or extending a production, inspect existing tasks and outputs to avoid duplicating work. Keep any configuration change and its effect on existing output in the DRS discussion.
 
-After the dataset passes validation, the MC contact inserts it into DaMI manually or with a script. Follow the [DaMI tutorial](../DaMI/README.md) and include the requester, MC contact, production references and full EOS path in the agreed metadata. Cancelling a DRS request does not stop its DIRAC transformations or jobs. Follow the instructors' cleanup procedure for the training production and its files.
+After the dataset passes validation, the MC contact inserts it into DaMI manually or with a script. Follow the [DaMI tutorial](../DaMI/README.md) and include the requester, MC contact, production references and full EOS path in the agreed metadata. Cancelling a DRS request does not stop its DIRAC transformations or jobs. The training output is stored alongside real `summer2026` production output. Keep the exact training transformation IDs, job IDs and EOS paths, and follow the instructors' cleanup procedure after the session. Cleanup must target only those training objects and files.
 
 ## Support
 

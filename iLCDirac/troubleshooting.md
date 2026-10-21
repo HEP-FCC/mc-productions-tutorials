@@ -6,8 +6,9 @@ Start with the first relevant error. Keep the DRS request, configuration revisio
 | --- | --- |
 | `dirac-fcc-make-productions` is missing | Source the session's iLCDirac client in a fresh shell. Check the client version and setup path. |
 | Proxy creation fails | Certificate setup, password, expiry, FCC registration and the requested group. Ask the instructors to check the account mapping. |
-| `fcc_user` works but live production is denied | Obtain the assigned `fcc_prod` access. Production submission requires `ProductionManagement`. |
-| Local checker finds a placeholder or too many events | Fill the session values and restore the one-task, at-most-100-event pilot budget. |
+| `fcc_user` works but live production is denied | Use a `fcc_prod` proxy. MC contacts registered in fcc-auth have been assigned this group for training. Production submission requires `ProductionManagement`; ask the instructors to check the mapping if access fails. |
+| The web portal cannot authenticate you | Import your personal GRID certificate and private key into the browser and check its validity. A command-line proxy does not install the browser certificate. |
+| A placeholder or wrong pilot budget is found while reviewing the configuration or dry run | Fill your CERN username, keep `campaign = summer2026` and restore the one-task, 100-event pilot budget before submission. |
 | Card is missing or the energy is inconsistent | Run from the work directory containing the cards. Compare `energies` with the Pythia `Beams:eCM` setting. |
 | Unknown application option | Check the exact section and option spelling against the installed version. Application keys map to setter names. |
 | Parameter-list lengths disagree | Pair process, energy, event count, steering file and task count explicitly. Start with one process and one energy. |
@@ -24,6 +25,6 @@ Start with the first relevant error. Keep the DRS request, configuration revisio
 
 Agree the recovery action with the responsible production expert after identifying the cause. A configuration bug usually needs a corrected recipe and an explicit decision about existing output. An infrastructure failure may have a different recovery path.
 
-Do not bulk-resubmit, delete transformations or remove files as a diagnostic shortcut. The training cleanup should identify the exact transformations, jobs and output involved. Stopping further task processing and cancelling jobs already submitted are separate actions. Cancelling the DRS request performs neither.
+Do not bulk-resubmit, delete transformations or remove files as a diagnostic shortcut. The training uses the `summer2026` campaign, so its output sits alongside real production output. Cleanup after the session must identify and target only the exact training transformations, jobs and EOS paths. Stopping further task processing and cancelling jobs already submitted are separate actions. Cancelling the DRS request performs neither.
 
 Return to [Launching productions](README.md).

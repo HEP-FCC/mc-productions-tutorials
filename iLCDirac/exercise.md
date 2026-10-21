@@ -10,7 +10,7 @@ For the bundled ZH example, use the corresponding ZH request. Keep its 100-event
 
 ## 2. Prepare and explain
 
-Prepare the [worked example](examples/README.md), fill the campaign and unique name, and run the local checker. Explain to your partner:
+Prepare the [worked example](examples/README.md), keep `campaign = summer2026`, fill your CERN username in the unique name and review the local cards and pilot budget. Explain to your partner:
 
 - Which file defines the generator physics?
 - Which settings determine the event content and detector response?
@@ -39,11 +39,13 @@ Add the real production reference and configuration revision to the request. Wri
 | Pilot task/event budget | |
 | Transformation ID | |
 | Associated job ID and observed status | |
-| Output file reference, if available | |
+| Transformation LFN and full EOS path, if available | |
 | Validation completed and next action | |
 
 If production access is unavailable, complete preparation and the dry run where possible, then inspect the instructor's demonstration production. Do not invent IDs or submit through another person's credentials.
 
-Follow the instructors' directions for cleanup. A change of DRS status does not cancel DIRAC jobs.
+In the portal, right-click the transformation and open its details to obtain its output LFN. Prepend `/eos/experiment/fcc/prod` to obtain the full EOS path for DaMI.
+
+The training uses `summer2026`, so its output sits alongside real production output. Retain the exact training IDs and paths and follow the instructors' directions for cleanup after the session. A change of DRS status does not cancel DIRAC jobs.
 
 Return to [Launching productions](README.md).

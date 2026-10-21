@@ -1,6 +1,8 @@
 # Single-process Pythia8 + Delphes training configuration.
-# Replace the two REPLACE_WITH values before running the local checker.
-# Use the software, campaign and storage values agreed for the session.
+# Replace REPLACE_WITH_CERN_USERNAME before running the iLCDirac dry run.
+# Training campaign: summer2026. Clean up the training output afterwards.
+# Use the software and storage values agreed for the session.
+# Local detector/output cards are for training only; package them for production.
 
 [delphesapp]
 ExecutableName = DelphesPythia8_EDM4HEP
@@ -19,7 +21,7 @@ configPackage = fccConfig
 
 eventsPerJobs = 100
 numberOfTasks = 1
-campaign = REPLACE_WITH_TRAINING_CAMPAIGN
+campaign = summer2026
 energies = 240
 processes = ZH
 detectorModel = IDEA
