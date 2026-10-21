@@ -8,6 +8,8 @@ The production `.conf` file selects the workflow, software, statistics, naming a
 
 Application sections use the spelling of the application's setter names. For example, `ExecutableName` maps to `setExecutableName`. Use the exact section and option names shown in the example.
 
+The [FCC Production Manager Guide](https://ilcdirac-doc.web.cern.ch/DOC/Files/ProdGuide/fccProdNotes.html) describes the configuration parameters and the output path, and gives example configurations for the standalone generators, the Delphes executables and a full simulation. Its examples use older software versions.
+
 | Agreed information | Configuration entry for the worked example |
 | --- | --- |
 | Pythia8 generation followed by Delphes | `generatorApplication = delphesapp` and `ExecutableName = DelphesPythia8_EDM4HEP` |

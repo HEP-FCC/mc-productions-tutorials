@@ -1,26 +1,34 @@
 # Setup
 
 Before working with the productions, every MC Production contact needs a
-GRID certificate and has to be registered in the FCC VO (Virtual
-Organisation).
+GRID certificate, has to be registered in the FCC VO (Virtual Organisation)
+and needs the iLCDirac client.
 
-The instructions are also in the iLCDirac documentation:
-https://ilcdirac-doc.web.cern.ch/DOC/Files/UserGuide/registration.html
+The steps are described in the existing documentation linked below. Parts of
+it might be outdated, so please ask if something does not work.
 
 
 ## Step 1: GRID certificate
 
-TODO: how to request the certificate from the CERN Certification Authority,
-export it from the browser and convert it to `usercert.pem`/`userkey.pem`.
+* Request the certificate from the CERN Certification Authority:
+  https://ca.cern.ch/ca/
+* Export and convert it, as described in the iLCDirac documentation:
+  https://ilcdirac-doc.web.cern.ch/DOC/Files/UserGuide/registration.html
 
 
 ## Step 2: FCC VO registration
 
-TODO: how to register in the FCC VO (FCC INDIGO IAM,
-https://fcc-auth.cern.ch/), and which groups/roles are needed.
+* Register in the FCC VO, as described in the FCC tutorial:
+  https://github.com/HEP-FCC/fcc-tutorials/blob/main/5-distributed-computing/RegisteringToFccVO.md
+* Check in https://fcc-auth.cern.ch/ that you are in the `fcc_prod` group and
+  that your iLCDirac nickname is set
 
 
-## Step 3: Environment and proxy
+## Step 3: iLCDirac client and proxy
 
-TODO: how to set up the environment and create a proxy, and how to check
-that it works.
+* Use only the existing iLCDirac client installation from CVMFS, do not
+  install your own:
+  `source /cvmfs/clicdp.cern.ch/DIRAC/bashrc`
+  (https://ilcdirac-doc.web.cern.ch/DOC/Files/UserGuide/ilcdiracclient.html)
+* Create the production proxy, as shown in the
+  [iLCDirac tutorial](../iLCDirac/README.md)
