@@ -5,8 +5,9 @@ Training of the MC Production contacts, Autumn 2026
 
 DaMI is the metadata catalogue for FCC physics datasets, formerly the FCC Physics Events website. It helps analysts find a sample, understand its configuration and identify where its files are stored. The MC Production contact keeps the catalogue record consistent with the production and the original dataset request.
 
+- [DaMI](https://fcc-dami.web.cern.ch/)
 - [DaMI test instance](https://fcc-dami-test.web.cern.ch/)
-- [FCC Physics Events production portal](https://fcc-physics-events.web.cern.ch/)
+- [FCC Physics Events](https://fcc-physics-events.web.cern.ch/) (former website)
 - [DRS walkthrough](../DRS/README.md)
 - [iLCDirac tutorial](../iLCDirac/README.md)
 
@@ -39,7 +40,7 @@ Before creating a record, search for the same sample and configuration to avoid 
 
 ## 3. Prepare the publication information
 
-The MC contact inserts datasets into DaMI manually through the interface or with a script. **Insert a real dataset only after it has passed validation.** Check the output files, event statistics and required physics or technical criteria, and retain the validation reference with the production information.
+The MC contact inserts datasets into DaMI manually through the interface or with a script. **Insert a real dataset only after it has passed validation.** There is no common validation procedure yet, for now it is up to each MC contact to decide on the checks, for example of the output files, event statistics and required physics or technical criteria. Retain the validation reference with the production information.
 
 | Information | What the contact should check |
 | --- | --- |
