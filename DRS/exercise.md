@@ -41,7 +41,9 @@ Use this as an example of updating the existing request. The software release an
 | Due Date / Priority | The useful delivery date, its reason and the agreed relative priority. |
 | Generator Cards | The agreed card or an immutable configuration reference. |
 
-The size estimate comes from [Juraj's review](https://github.com/HEP-FCC/mc-productions-tutorials/pull/1#discussion_r4324368115), using decimal kB and GB. Keep the request Under Review while clarifications or decisions remain outstanding.
+The estimate uses decimal kB and GB. For full-simulation samples, consult the **Event Size** section of the [k4Bench reconstruction dashboard](https://k4bench-dashboard.app.cern.ch/reconstruction), using a benchmark appropriate to the requested configuration.
+
+Keep the request Under Review while clarifications or decisions remain outstanding.
 
 <details>
 <summary>Debrief: suggested points to discuss</summary>

@@ -55,7 +55,7 @@ The requester selects **New Request** and CERN SSO supplies their identity. MC c
 | Format | The requested format, for example EDM4hep or HepMC3. It must be compatible with the requested processing. |
 | Detector(s) | Required by the form for stages beyond Generation. Give the concept and identify the relevant configuration precisely. |
 | Statistics | The requested event count. Say whether it is before or after a filter, and specify counts per energy point or configuration where needed. |
-| Estimated Size | An estimate with units and its basis. Update it using the validation sample when possible. |
+| Estimated Size | An estimate with units and its basis. For full-simulation samples, consult the **Event Size** section of the [k4Bench reconstruction dashboard](https://k4bench-dashboard.app.cern.ch/reconstruction) for the relevant configuration. Update the estimate using the validation sample when possible. |
 | Target Campaign | A requested campaign preference, entered as text. Actual assignment uses the separate **Campaign** control after review. |
 | Key4hep Stack | The exact release agreed for the production. Resolve this before launching. |
 | Due Date and Priority | The useful delivery date and its reason. Priorities available are Low, Medium, High and Critical. Agree relative priority with the responsible people. |
