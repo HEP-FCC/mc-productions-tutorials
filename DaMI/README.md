@@ -53,7 +53,7 @@ The MC contact inserts datasets into DaMI manually through the interface or with
 | Production traceability | Original DRS request, transformation IDs labelled by process and step, and validation reference. |
 | Limitations | Incomplete statistics, known issues and the intended use of the sample. |
 
-The campaign metadata fields will be discussed during the training, including the requester and MC contact. Use the agreed field names, definitions and units. DaMI supports fields such as `n-events`, `path`, `size`, `description`, `comment` and `status`, and permits additional metadata. Completing the form does not establish that the dataset passed validation.
+The campaign metadata fields will be discussed during the training, including the requester and MC contact. After the discussion, replace the table above with the agreed list of metadata fields required for the campaign, including their names, definitions and units. DaMI supports fields such as `n-events`, `path`, `size`, `description`, `comment` and `status`, and permits additional metadata. Completing the form does not establish that the dataset passed validation.
 
 ## 4. Add a dataset
 
@@ -112,7 +112,21 @@ Record the catalogue reference in the original DRS request and tell the requeste
 
 ## 7. Using the sample in FCCAnalyses
 
+For the current central productions, obtain the output path as follows:
+
+1. In the [iLCDirac web portal](https://voilcdiracwebapp2.cern.ch/DIRAC/), right-click the relevant transformation and open its details.
+2. Copy its logical file name (LFN) for the output location.
+3. Prepend `/eos/experiment/fcc/prod` to that LFN to obtain the full EOS path. For example:
+
+| Transformation LFN | Full EOS path |
+| --- | --- |
+| `/fcc/ee/summer2026/240gev/ZH/IDEA/delphes/...` | `/eos/experiment/fcc/prod/fcc/ee/summer2026/240gev/ZH/IDEA/delphes/...` |
+
+The `...` represents the remaining path components. Copy the complete actual LFN. For now, the MC contact inserts the resulting full EOS path into DaMI's `path` metadata by hand and checks file access. Historical datasets can use different storage layouts; keep their actual recorded paths.
+
 Use the dataset by providing its **full path on EOS** to your FCCAnalyses analysis. Copy the path from the validated catalogue record and check that you can access the files in your analysis environment. DaMI metadata downloads contain catalogue information; the event files are accessed at the recorded location.
+
+Distributed-computing capabilities are still evolving. An API is planned for programmatic access; instructions for using it will be added when it is available.
 
 ## 8. Practical exercise
 
