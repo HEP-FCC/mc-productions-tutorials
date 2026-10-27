@@ -114,7 +114,7 @@ After the approvals and campaign placement have been agreed:
 4. As the MC contact, write or adapt the production configuration, check its inputs, run the dry run and submit through the iLCDirac command line. Follow the [iLCDirac tutorial](../iLCDirac/README.md) for the small pilot and subsequent monitoring.
 5. When the production system supplies identifiers, return to the request. **Production IDs** appears when a campaign is assigned.
 6. Enter the real positive numeric **DIRAC transformation ID for each process and each step**, label it with the process and step, and select **Add**. For example, three processes with Gen, Sim and Rec require nine transformation IDs. A label such as `ZH / Gen` identifies the process and step.
-7. Add a comment linking the configuration revision and pilot budget. Inspect the transformation and associated jobs in iLCDirac, and report the observed status and useful validation information.
+7. Add a comment linking the FCCDIRAC attempt directory (see [Record the production in FCCDIRAC](../iLCDirac/production-config.md#record-the-production-in-fccdirac)) and the pilot budget. Inspect the transformation and associated jobs in iLCDirac, and report the observed status and useful validation information.
 
 Entering a production ID stores a reference in the DRS. It does not create the corresponding production. A DRS request number and a job number identify different objects and should be labelled accordingly.
 

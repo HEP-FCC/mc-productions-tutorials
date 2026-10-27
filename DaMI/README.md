@@ -46,7 +46,7 @@ The MC contact inserts datasets into DaMI manually through the interface or with
 | --- | --- |
 | Dataset name and categories | Agreed name, accelerator, processing stage, campaign, detector and file type. Reuse the agreed category spellings. |
 | Physics definition | Process, collision energy, relevant filters, generator settings and purpose. |
-| Configuration | Generator and detector/card revisions, software release and relevant production settings. |
+| Configuration | Link to the FCCDIRAC attempt directory with the exact configuration and cards, software release and relevant production settings. |
 | Delivered statistics | Actual usable event count. Distinguish requested, generated and accepted events where relevant. |
 | Normalisation | Cross section, efficiency or weights required by the analysis, including their definitions and units. |
 | File location | The actual location or file-list reference, with access checked using the agreed analysis environment. |

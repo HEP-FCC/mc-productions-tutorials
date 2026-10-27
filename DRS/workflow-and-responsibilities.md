@@ -15,7 +15,7 @@ By the end of the training, a contact should be able to review an existing DRS r
 | --- | --- | --- | --- |
 | Define the request | DRS | The requester records the physics need, intended use, available configuration information and requested statistics. | Request URL, specification and generator cards. |
 | Review and organise | DRS | Resolve missing information, record the agreed physics and resources decisions, and organise campaign assignment. | Comments, approval records and assigned campaign. |
-| Prepare and run | iLCDirac | The MC contact writes and checks the production configuration, submits it through the command line and monitors the transformation and its jobs. | Configuration revision, software release, validation results and production identifiers. |
+| Prepare and run | iLCDirac | The MC contact writes and checks the production configuration, submits it through the command line and monitors the transformation and its jobs. | FCCDIRAC attempt directory, software release, validation results and production identifiers. |
 | Check and publish | Output storage and DaMI | Check the delivered files and statistics, publish the dataset metadata and tell the requester how to access the sample. | Validation summary, dataset reference and access information. |
 
 The DRS records requests and coordination decisions. The iLCDirac part of the training covers job submission and monitoring. An approved request, or a request assigned to a campaign, still needs the corresponding production work.
@@ -58,7 +58,7 @@ Before closing a request, check the agreed delivered statistics, file access and
 | Reference | What it identifies |
 | --- | --- |
 | DRS request URL / request number | The community's request and its discussion. |
-| Configuration commit or tag | The exact recipe used for the sample. |
+| FCCDIRAC attempt directory | The exact configuration and cards used for the dataset, for example `productions/autumn2026/DRS-42/attempt1/`. |
 | Production / transformation identifiers | The DIRAC transformation ID of every process and step, labelled by process and step. Three processes with Gen, Sim and Rec give nine IDs. |
 | Job identifier | One submitted job within the processing. |
 | Dataset name, location or DaMI entry | The output that analysts need to discover and access. |

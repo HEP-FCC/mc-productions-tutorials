@@ -27,14 +27,18 @@ When the instructors start the live-submission part, submit once with `-x`. Find
 
 Inspect the job's status and details. If it is not running yet, report the observed state. Use an existing demonstration production if the training job cannot finish during the session.
 
-## 5. Return to the DRS
+## 5. Record the production in FCCDIRAC
 
-Add the real production reference and configuration revision to the request. Write a short factual update with the pilot budget and observed status. Identify the output checks still needed before scaling or publishing the dataset.
+In your attempt directory, `productions/summer2026/DRS-<n>/attempt1/` of your FCCDIRAC clone, commit the `.conf` file and the three cards with the transformation ID in the commit message. Push the branch to your fork and open a pull request to [FCCDIRAC](https://github.com/HEP-FCC/FCCDIRAC). Follow [Record the production in FCCDIRAC](production-config.md#record-the-production-in-fccdirac).
+
+## 6. Return to the DRS
+
+Add the real production reference and the link to the FCCDIRAC attempt directory to the request. Write a short factual update with the pilot budget and observed status. Identify the output checks still needed before scaling or publishing the dataset.
 
 | Evidence | Your result |
 | --- | --- |
 | DRS request URL | |
-| Configuration and card revision | |
+| FCCDIRAC attempt directory and pull request | |
 | Client and Key4hep versions | |
 | Pilot task/event budget | |
 | Transformation ID | |

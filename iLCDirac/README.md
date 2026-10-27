@@ -58,7 +58,7 @@ Check the identity, remaining lifetime, **DIRAC group** and uploaded proxy. The 
 
 ## 3. Prepare one small configuration
 
-Follow the [worked example](examples/README.md) to create a work directory containing:
+Follow the [worked example](examples/README.md) to create an attempt directory in your FCCDIRAC clone containing:
 
 - `training.conf`, your production configuration.
 - `p8_ee_ZH_ecm240.cmd`, the Pythia8 card.
@@ -73,7 +73,7 @@ Read [Production configuration](production-config.md), check the local input car
 
 ## 4. Run without creating a production
 
-From the work directory, run:
+From the attempt directory, run:
 
 ```bash
 set -o pipefail
@@ -109,6 +109,8 @@ dirac-fcc-make-productions -f training.conf -x 2>&1 | tee submit.log
 Save the real transformation ID and find the production in the [iLCDirac web portal](https://voilcdiracwebapp2.cern.ch/DIRAC/). Check its name, configuration and task limit. If submission fails partway through, inspect the portal and log before retrying: an earlier stage may already exist.
 
 Return to the DRS request. Under **Production IDs**, record each real transformation ID labelled by **process and step**, for example `ZH / Gen`. Add the configuration revision and pilot budget in a comment. Record every process/step combination: three processes with Gen, Sim and Rec give nine transformation IDs.
+
+Also commit the configuration and cards to FCCDIRAC with the transformation IDs in the commit message, and link the attempt directory in the request. See [Record the production in FCCDIRAC](production-config.md#record-the-production-in-fccdirac).
 
 ## 6. Monitor transformations and jobs
 

@@ -70,11 +70,31 @@ The command pairs configured entries; it does not generate every possible proces
 
 The worked example keeps all three cards in the submission directory as a **training-only shortcut**. The current Delphes application accepts local detector and output cards and adds them to the input sandbox. It reads the Pythia8 card through its card-finding utility. Missing local files can otherwise trigger lookup in configured locations.
 
-For normal productions, obtain the generator card from the requester through the DRS upload or from the maintained "golden cards" in [FCC-config](https://github.com/HEP-FCC/FCC-config). Package the detector and output cards in the configuration tarball selected by `configPackage` and `configVersion`. The pinned FCCDIRAC downloads are used only to reproduce the training example; FCCDIRAC records production history.
+For normal productions, obtain the generator card from the requester through the DRS upload or from the maintained "golden cards" in [FCC-config](https://github.com/HEP-FCC/FCC-config). Package the detector and output cards in the configuration tarball selected by `configPackage` and `configVersion`. The pinned FCCDIRAC downloads are used only to reproduce the training example; FCCDIRAC records production history (see [Record the production in FCCDIRAC](#record-the-production-in-fccdirac)).
 
 For the training, local copies with known revisions make the chosen inputs unambiguous. Record the immutable source commit and your changes. The example's `key4hep_260408` and `key4hep-devel-6` values come from the referenced FCC configuration. Use them only when they match the session's available software and configuration package.
 
 Do not use `latest` as the record of a production's software version. Do not add a fixed random seed to make all training jobs identical. Use the production workflow's seed handling and record the production and job IDs.
+
+## Record the production in FCCDIRAC
+
+Every production is recorded in [FCCDIRAC](https://github.com/HEP-FCC/FCCDIRAC), so that anyone can read the exact configuration on GitHub without going through iLCDirac. This includes the training and test productions in the `summer2026` campaign.
+
+- Prepare the `.conf` file and all cards (generator, detector, output) in `productions/<campaign>/DRS-<n>/attempt<k>/` of your FCCDIRAC clone, for example `productions/autumn2026/DRS-42/attempt1/`, and submit from that directory. Commit the `.conf` file and the cards; the logs and workflow XML stay local.
+- A submitted attempt is never changed. Any change to the configuration or a card is a new attempt: `attempt2`, `attempt3`, … Extending a production keeps its configuration and stays in the same attempt.
+- Record the transformation IDs, labelled by process and step, in the commit message:
+
+  ```
+  DRS-42 attempt1: ZH, ZZ, WW at 240 GeV, IDEA Delphes
+
+  Transformation IDs:
+  - ZH / Gen: 23401
+  - ZZ / Gen: 23402
+  - WW / Gen: 23403
+  ```
+
+- Open the pull request after the submission, in a timely manner. The directory identifies the attempt, so no commit hash needs to be recorded and the commit can be rebased or amended freely.
+- Link the attempt directory on the `master` branch in the DRS request and in DaMI.
 
 ## Naming and output location
 
