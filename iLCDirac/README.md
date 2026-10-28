@@ -27,7 +27,7 @@ For the training, use the request and small event budget identified by the instr
 | Object | What it tells you |
 | --- | --- |
 | DRS request | What has been requested and agreed. |
-| Production configuration and cards | How the sample is to be produced. |
+| Production configuration and cards | How the dataset is to be produced. |
 | Transformation / production ID | The managed production created by this command. A multi-stage chain can have several IDs. |
 | Job ID | One workload-management job associated with the production. |
 | Output LFN and dataset reference | Where the resulting files and metadata can be found. |
@@ -156,7 +156,7 @@ In the web portal, right-click the relevant transformation and open its details 
 
 Use the complete actual LFN in place of the abbreviated example. This full EOS path is the value to enter manually in DaMI's `path` metadata.
 
-For the pilot, locate at least one output file and verify that it opens in the agreed analysis environment. Check the event count, expected collections, generator/configuration information and a basic observable appropriate to the sample. Retain the file reference and validation result.
+For the pilot, locate at least one output file and verify that it opens in the agreed analysis environment. Check the event count, expected collections, generator/configuration information and a basic observable appropriate to the dataset. Retain the file reference and validation result.
 
 Report separately what is configured, submitted, running and delivered. A successful job status alone is not a physics-validation result.
 

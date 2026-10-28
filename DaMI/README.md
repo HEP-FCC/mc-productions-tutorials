@@ -3,7 +3,7 @@
 Speakers: Pantelis Kontaxakis and Juraj Smiesko  
 Training of the MC Production contacts, Autumn 2026
 
-DaMI is the metadata catalogue for FCC physics datasets, formerly the FCC Physics Events website. It helps analysts find a sample, understand its configuration and identify where its files are stored. The MC Production contact keeps the catalogue record consistent with the production and the original dataset request.
+DaMI is the metadata catalogue for FCC physics datasets, formerly the FCC Physics Events website. It helps analysts find a dataset, understand its configuration and identify where its files are stored. The MC Production contact keeps the catalogue record consistent with the production and the original dataset request.
 
 - [DaMI](https://fcc-dami.web.cern.ch/)
 - [DaMI test instance](https://fcc-dami-test.web.cern.ch/)
@@ -34,9 +34,9 @@ MC contacts need editor access for the creation and editing tasks in this tutori
 3. Expand the dataset metadata. **All Metadata** can expand the displayed records together.
 4. Read the dataset name, campaign, processing stage, detector, event count and available configuration information.
 5. Inspect the recorded file location and check whether it identifies the required output. A catalogue entry alone does not establish that the files are accessible or validated.
-6. Copy the displayed **UUID** and keep the dataset name and campaign with it. These identify the catalogue record and help distinguish samples with similar names.
+6. Copy the displayed **UUID** and keep the dataset name and campaign with it. These identify the catalogue record and help distinguish datasets with similar names.
 
-Before creating a record, search for the same sample and configuration to avoid duplicates.
+Before creating a record, search for the same dataset and configuration to avoid duplicates.
 
 ## 3. Prepare the publication information
 
@@ -52,7 +52,7 @@ The MC contact inserts datasets into DaMI manually through the interface or with
 | File location | The actual location or file-list reference, with access checked using the agreed analysis environment. |
 | People responsible | The requester and the MC Production contact. |
 | Production traceability | Original DRS request, transformation IDs labelled by process and step, and validation reference. |
-| Limitations | Incomplete statistics, known issues and the intended use of the sample. |
+| Limitations | Incomplete statistics, known issues and the intended use of the dataset. |
 
 The campaign metadata fields will be discussed during the training, including the requester and MC contact. After the discussion, replace the table above with the agreed list of metadata fields required for the campaign, including their names, definitions and units. DaMI supports fields such as `n-events`, `path`, `size`, `description`, `comment` and `status`, and permits additional metadata. Completing the form does not establish that the dataset passed validation.
 
@@ -68,7 +68,7 @@ The campaign metadata fields will be discussed during the training, including th
 6. Review the information, then select **Create Dataset**.
 7. Check the result message, close the dialog and find the new record. Expand it and verify its metadata and UUID.
 
-Creating the record adds metadata to the catalogue. It does not run a production, transfer physics files or validate the sample. The MC contact is responsible for inserting the validated dataset, either through the interface or using a script following the agreed campaign conventions.
+Creating the record adds metadata to the catalogue. It does not run a production, transfer physics files or validate the dataset. The MC contact is responsible for inserting the validated dataset, either through the interface or using a script following the agreed campaign conventions.
 
 ### Several datasets from JSON
 
@@ -95,7 +95,7 @@ Metadata fields can be locked to protect values from later updates. Review a loc
 
 For the exercise, change only the comment on a designated test record. Dataset deletion is outside the participant exercise.
 
-## 6. Export metadata and hand the sample to an analyst
+## 6. Export metadata and hand the dataset to an analyst
 
 Select the record's checkbox, open **Actions**, then choose **Download Selected**. **Download All Matching** exports all results matching the current filters, so check the filters before using it.
 
@@ -107,11 +107,11 @@ The handover to the requester should include:
 - The full EOS path to the dataset, checked for access.
 - Processing stage, event-data format and configuration/software reference.
 - Delivered statistics, normalisation information and validation limitations.
-- The requester and the MC contact responsible for the sample.
+- The requester and the MC contact responsible for the dataset.
 
 Record the catalogue reference in the original DRS request and tell the requester how to use the output. Follow the agreed DRS completion procedure once the required checks and handover are complete.
 
-## 7. Using the sample in FCCAnalyses
+## 7. Using the dataset in FCCAnalyses
 
 For the current central productions, obtain the output path as follows:
 
@@ -136,7 +136,7 @@ Estimated time: 10 minutes. Use the instance and reference dataset identified by
 1. Find the reference dataset and record its name, campaign, stage, detector, event count and UUID.
 2. Identify its full EOS path, validation reference, requester and MC contact. Note any information that is missing.
 3. Export only that dataset using **Download Selected**. Inspect the JSON and identify the UUID and metadata fields.
-4. If the instructors assign you a validated sample that is not yet catalogued, add its actual metadata with **Add Dataset** using the agreed fields and categories. Search first to avoid duplicating an existing record. Otherwise, follow the creation demonstration without adding another record.
+4. If the instructors assign you a validated dataset that is not yet catalogued, add its actual metadata with **Add Dataset** using the agreed fields and categories. Search first to avoid duplicating an existing record. Otherwise, follow the creation demonstration without adding another record.
 5. On a record assigned to you for editing, make the agreed comment change, save and reload. Leave other records unchanged.
 6. Explain what validation evidence and metadata are needed before a new dataset can be published.
 

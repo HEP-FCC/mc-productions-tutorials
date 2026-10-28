@@ -2,7 +2,7 @@
 
 This example prepares a Pythia8 + Delphes pilot for ZH at 240 GeV with IDEA and EDM4hep output. It adapts the configuration in [FCCDIRAC PR #19](https://github.com/HEP-FCC/FCCDIRAC/pull/19), pinned to commit `d178d5e3e6484a4cb468ef5b1bcfbf117d58b9d6`.
 
-Use the DRS request assigned for this sample. The hadronic-Z example in the DRS review exercise is a different physics request and should not be submitted with this ZH configuration.
+Use the DRS request assigned for this dataset. The hadronic-Z example in the DRS review exercise is a different physics request and should not be submitted with this ZH configuration.
 
 ## Prepare the attempt directory
 
@@ -52,4 +52,4 @@ The Pythia card contains its original standalone event count. The production wor
 
 Check that all three local cards are present, the CERN username is filled, the Pythia card's `Beams:eCM` agrees with `energies = 240`, and the configuration still requests one task and 100 events in `summer2026`.
 
-Use the existing [iLCDirac dry run](../README.md#4-run-without-creating-a-production) to check the configuration. Inspect its messages and workflow XML before a live submission. A successful dry run checks workflow preparation; the pilot execution and output checks establish whether the sample was produced as intended.
+Use the existing [iLCDirac dry run](../README.md#4-run-without-creating-a-production) to check the configuration. Inspect its messages and workflow XML before a live submission. A successful dry run checks workflow preparation; the pilot execution and output checks establish whether the dataset was produced as intended.

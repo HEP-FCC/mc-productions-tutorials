@@ -18,7 +18,7 @@ Start with the first relevant error. Keep the DRS request, configuration revisio
 | Active transformation has no jobs | Inspect the tasks and service processing. Ask production support with the ID and time of submission. Repeated submission is not a diagnostic step. |
 | Job is queued for a long time | Inspect its detailed status and site/resource information. Compare with the instructor's demonstration production. |
 | Job fails | Read the minor status and logs. Distinguish application/configuration errors from access, transfer or site failures. |
-| Job is Done but the sample is not usable | Check output registration, replicas, file access, event count and collections. Sandbox retrieval does not retrieve all event data. |
+| Job is Done but the dataset is not usable | Check output registration, replicas, file access, event count and collections. Sandbox retrieval does not retrieve all event data. |
 | No sandbox or production log is available yet | Check the job phase and output-upload status. Inspect the portal and the production log location in the job details. |
 
 ## Recovery and cleanup

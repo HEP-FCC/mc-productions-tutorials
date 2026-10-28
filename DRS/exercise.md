@@ -27,7 +27,7 @@ Use this as an example of updating the existing request. The software release an
 
 | DRS field | Example entry |
 | --- | --- |
-| Title | `[TRAINING] Hadronic Z-pole sample for an IDEA performance study` |
+| Title | `[TRAINING] Hadronic Z-pole dataset for an IDEA performance study` |
 | Description | `e+e- collisions at sqrt(s) = 91.2 GeV. Inclusive hadronic Z/gamma* production with u, d, s, c and b final states. No generator-level event filter is requested. Study: compare reconstructed jet observables. Confirm the generator/version, ISR and beam settings, decay treatment and exact configuration before launching.` |
 | Group / Team | The training group chosen by the instructors. For a real request, use its responsible physics group. |
 | Use Case | Physics Analysis, if agreed with the requester. |
@@ -35,13 +35,13 @@ Use this as an example of updating the existing request. The software release an
 | Format | EDM4hep, if agreed for the analysis chain. ROOT alone does not specify the event-data model or collections. |
 | Detector(s) | IDEA, with the exact Delphes card revision in the configuration reference. |
 | Statistics | 100,000 final events at one energy point. Keep the pilot count separate. |
-| Estimated Size | About 0.75 GB for 100,000 events, using 7.5 kB/event measured on Winter 2023 IDEA Delphes Z-to-qq samples. Check the estimate for the chosen software and output content. |
+| Estimated Size | About 0.75 GB for 100,000 events, using 7.5 kB/event measured on Winter 2023 IDEA Delphes Z-to-qq datasets. Check the estimate for the chosen software and output content. |
 | Target Campaign | The requested campaign, using its agreed spelling. |
 | Key4hep Stack | The exact agreed release. Replace `latest` with that reference. |
 | Due Date / Priority | The useful delivery date, its reason and the agreed relative priority. |
 | Generator Cards | The agreed card or an immutable configuration reference. |
 
-The estimate uses decimal kB and GB. For full-simulation samples, consult the **Event Size** section of the [k4Bench reconstruction dashboard](https://k4bench-dashboard.app.cern.ch/reconstruction), using a benchmark appropriate to the requested configuration.
+The estimate uses decimal kB and GB. For full-simulation datasets, consult the **Event Size** section of the [k4Bench reconstruction dashboard](https://k4bench-dashboard.app.cern.ch/reconstruction), using a benchmark appropriate to the requested configuration.
 
 Keep the request Under Review while clarifications or decisions remain outstanding.
 
