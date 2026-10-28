@@ -63,7 +63,7 @@ Before closing a request, check the agreed delivered statistics, file access and
 | Job identifier | One submitted job within the processing. |
 | Dataset name, location or DaMI entry | The output that analysts need to discover and access. |
 
-Keep these references together, with labels explaining their meaning. The DRS **Production IDs** control records identifiers supplied by the production system.
+Keep these references together, with labels explaining their meaning. The DRS **Transformation IDs** control records identifiers supplied by the production system.
 
 ## Support
 

@@ -24,7 +24,7 @@ Version reference: DRS source commit [`ceaab4a`](https://github.com/HEP-FCC/fcc-
 | DRS role | Relevant capabilities |
 | --- | --- |
 | Requester | Create requests, view requests, comment, and edit their own request while it is Draft or Under Review. |
-| Coordinator | Review and edit requests, record approval decisions, adjust priority/status and group/campaign assignment, add production IDs and use internal notes. |
+| Coordinator | Review and edit requests, record approval decisions, adjust priority/status and group/campaign assignment, add Transformation IDs and use internal notes. |
 | Admin | Coordinator capabilities plus user-role, coordinator-group and campaign administration. |
 
 Coordinator powers apply across requests. A **Coordinator Group** assignment organises responsibility and notifications; it does not restrict the coordinator role to that group's requests. Work on the requests agreed with your group and the organisers.
@@ -112,11 +112,11 @@ After the approvals and campaign placement have been agreed:
 2. Select the agreed campaign and read the confirmation before applying it. The normal entry point is an Approved request. Assignments belonging to a closed campaign are locked.
 3. Check the campaign name, request status and activity record.
 4. As the MC contact, write or adapt the production configuration, check its inputs, run the dry run and submit through the iLCDirac command line. Follow the [iLCDirac tutorial](../iLCDirac/README.md) for the small trial and subsequent monitoring.
-5. When the production system supplies identifiers, return to the request. **Production IDs** appears when a campaign is assigned.
+5. When the production system supplies identifiers, return to the request. **Transformation IDs** appears when a campaign is assigned.
 6. Enter the real positive numeric **DIRAC transformation ID for each process and each step**, label it with the process and step, and select **Add**. For example, three processes with Gen, Sim and Rec require nine transformation IDs. A label such as `ZH / Gen` identifies the process and step.
 7. Add a comment linking the FCCDIRAC attempt directory (see [Record the production in FCCDIRAC](../iLCDirac/production-config.md#record-the-production-in-fccdirac)) and the trial budget. Inspect the transformation and associated jobs in iLCDirac, and report the observed status and useful validation information.
 
-Entering a production ID stores a reference in the DRS. It does not create the corresponding production. A DRS request number and a job number identify different objects and should be labelled accordingly.
+Entering a Transformation ID stores a reference in the DRS. It does not create the corresponding production. A DRS request number and a job number identify different objects and should be labelled accordingly.
 
 ## 7. Completion and publication
 
