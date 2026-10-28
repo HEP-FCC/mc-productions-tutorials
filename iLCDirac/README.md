@@ -11,7 +11,7 @@ This tutorial follows one small Pythia8 + Delphes production through that sequen
 | --- | --- |
 | This page | Environment, dry run, submission and monitoring. |
 | [Production configuration](production-config.md) | Translate the agreed request into configuration fields. |
-| [Worked example](examples/README.md) | Prepare a 100-event ZH pilot at 240 GeV using pinned input cards. |
+| [Worked example](examples/README.md) | Prepare a 100-event ZH trial at 240 GeV using pinned input cards. |
 | [Practical exercise](exercise.md) | Follow a DRS request through submission and follow-up. |
 | [Troubleshooting](troubleshooting.md) | Diagnose common setup, configuration and job problems. |
 | [Version references](sources.md) | Identify the implementation and example used by this guide. |
@@ -27,7 +27,7 @@ For the training, use the request and small event budget identified by the instr
 | Object | What it tells you |
 | --- | --- |
 | DRS request | What has been requested and agreed. |
-| Production configuration and cards | How the sample is to be produced. |
+| Production configuration and cards | How the dataset is to be produced. |
 | Transformation / production ID | The managed production created by this command. A multi-stage chain can have several IDs. |
 | Job ID | One workload-management job associated with the production. |
 | Output LFN and dataset reference | Where the resulting files and metadata can be found. |
@@ -58,22 +58,22 @@ Check the identity, remaining lifetime, **DIRAC group** and uploaded proxy. The 
 
 ## 3. Prepare one small configuration
 
-Follow the [worked example](examples/README.md) to create a work directory containing:
+Follow the [worked example](examples/README.md) to create an attempt directory in your FCCDIRAC clone containing:
 
 - `training.conf`, your production configuration.
 - `p8_ee_ZH_ecm240.cmd`, the Pythia8 card.
 - `card_IDEA.tcl`, the detector card.
 - `edm4hep_IDEA.tcl`, the output-content card.
 
-The example uses one process, one energy point, `eventsPerJobs = 100` and `numberOfTasks = 1`. Keep the full statistics requested in the DRS separate from this pilot budget. The training uses `campaign = summer2026`; retain the unique training name and check the software version and storage element agreed for the session. Its output will be stored alongside the summer2026 productions and must be cleaned up after training.
+The example uses one process, one energy point, `eventsPerJobs = 100` and `numberOfTasks = 1`. Keep the full statistics requested in the DRS separate from this trial budget. The training uses `campaign = summer2026`; retain the unique training name and check the software version and storage element agreed for the session. Its output will be stored alongside the summer2026 productions and must be cleaned up after training.
 
 The local-card layout and pinned FCCDIRAC downloads are training-only shortcuts. For normal productions, use the requester's DRS generator card or a maintained FCC-config golden card, and include the detector and output cards in the configuration tarball selected by `configPackage` and `configVersion`.
 
-Read [Production configuration](production-config.md), check the local input cards and review the one-task, 100-event pilot budget. Use the iLCDirac dry run below to check the production configuration.
+Read [Production configuration](production-config.md), check the local input cards and review the one-task, 100-event trial budget. Use the iLCDirac dry run below to check the production configuration.
 
 ## 4. Run without creating a production
 
-From the work directory, run:
+From the attempt directory, run:
 
 ```bash
 set -o pipefail
@@ -92,13 +92,13 @@ Review the messages and generated workflow XML. Check:
 
 **The dry-run implementation uses `12345` as a placeholder production ID. It is not a real submission result and must not be entered in the DRS.**
 
-A successful dry run checks workflow preparation. The small live pilot checks execution, file transfer and output content. A local generator test or a separately submitted `UserJob` also does not create the central transformation needed here.
+A successful dry run checks workflow preparation. The small live trial checks execution, file transfer and output content. A local generator test or a separately submitted `UserJob` also does not create the central transformation needed here.
 
-## 5. Create the pilot production
+## 5. Create the trial production
 
 Before submission, import your personal GRID certificate, including its private key, into the browser you will use for the [iLCDirac web portal](https://voilcdiracwebapp2.cern.ch/DIRAC/), then check that you can log in. Browser certificate authentication is separate from the command-line proxy setup.
 
-Once the request is ready for production and the instructors have reviewed the pilot configuration, run:
+Once the request is ready for production and the instructors have reviewed the trial configuration, run:
 
 ```bash
 dirac-fcc-make-productions -f training.conf -x 2>&1 | tee submit.log
@@ -108,7 +108,9 @@ dirac-fcc-make-productions -f training.conf -x 2>&1 | tee submit.log
 
 Save the real transformation ID and find the production in the [iLCDirac web portal](https://voilcdiracwebapp2.cern.ch/DIRAC/). Check its name, configuration and task limit. If submission fails partway through, inspect the portal and log before retrying: an earlier stage may already exist.
 
-Return to the DRS request. Under **Production IDs**, record each real transformation ID labelled by **process and step**, for example `ZH / Gen`. Add the configuration revision and pilot budget in a comment. Record every process/step combination: three processes with Gen, Sim and Rec give nine transformation IDs.
+Return to the DRS request. Under **Transformation IDs**, record each real transformation ID labelled by **process and step**, for example `ZH / Gen`. Add the configuration revision and trial budget in a comment. Record every process/step combination: three processes with Gen, Sim and Rec give nine transformation IDs.
+
+Also commit the configuration and cards to FCCDIRAC with the transformation IDs in the commit message, and link the attempt directory in the request. See [Record the production in FCCDIRAC](production-config.md#record-the-production-in-fccdirac).
 
 ## 6. Monitor transformations and jobs
 
@@ -154,11 +156,11 @@ In the web portal, right-click the relevant transformation and open its details 
 
 Use the complete actual LFN in place of the abbreviated example. This full EOS path is the value to enter manually in DaMI's `path` metadata.
 
-For the pilot, locate at least one output file and verify that it opens in the agreed analysis environment. Check the event count, expected collections, generator/configuration information and a basic observable appropriate to the sample. Retain the file reference and validation result.
+For the trial, locate at least one output file and verify that it opens in the agreed analysis environment. Check the event count, expected collections, generator/configuration information and a basic observable appropriate to the dataset. Retain the file reference and validation result.
 
 Report separately what is configured, submitted, running and delivered. A successful job status alone is not a physics-validation result.
 
-After the pilot, follow the campaign's agreed scaling procedure. Before retrying or extending a production, inspect existing tasks and outputs to avoid duplicating work. Keep any configuration change and its effect on existing output in the DRS discussion.
+After the trial, follow the campaign's agreed scaling procedure. Before retrying or extending a production, inspect existing tasks and outputs to avoid duplicating work. Keep any configuration change and its effect on existing output in the DRS discussion.
 
 After the dataset passes validation, the MC contact inserts it into DaMI manually or with a script. Follow the [DaMI tutorial](../DaMI/README.md) and include the requester, MC contact, production references and full EOS path in the agreed metadata. Cancelling a DRS request does not stop its DIRAC transformations or jobs. The training output is stored alongside real `summer2026` production output. Keep the exact training transformation IDs, job IDs and EOS paths, and follow the instructors' cleanup procedure after the session. Cleanup must target only those training objects and files.
 
