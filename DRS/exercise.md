@@ -17,7 +17,7 @@ This is an illustrative training request. Its numbers and physics choices are fo
 3. Post a short public comment asking for the missing information. With the designated recipient, check that the expected DRS email notification arrives and opens this request. Record any failure for the instructors.
 4. Once the requester clarifies the need, update the existing record. Which information belongs in **Description**, and which belongs in a dedicated field? Use the mapping below.
 5. Suppose Physics is Approved and Resources is Pending. Resources approval currently belongs to the DRS admins. You can prepare the configuration and review its dry run while that decision is pending; resolve the approvals before a live launch.
-6. Once both approvals and campaign placement are agreed, write or adapt the production configuration and submit through the iLCDirac command line. Continue in the [production-launching tutorial](../iLCDirac/README.md) using its designated request and small pilot budget. Its ZH example is a different process from this hadronic-Z review example.
+6. Once both approvals and campaign placement are agreed, write or adapt the production configuration and submit through the iLCDirac command line. Continue in the [production-launching tutorial](../iLCDirac/README.md) using its designated request and small trial budget. Its ZH example is a different process from this hadronic-Z review example.
 7. Find the resulting transformations and associated jobs in iLCDirac. Record the real transformation IDs labelled by process and step, a job ID and its observed status. Explain why DRS **In Progress** alone does not show that jobs are running.
 8. The requester asks to double the statistics after approval. What should you record and recheck before extending the production?
 
@@ -34,7 +34,7 @@ Use this as an example of updating the existing request. The software release an
 | Final Processing Stage | Delphes |
 | Format | EDM4hep, if agreed for the analysis chain. ROOT alone does not specify the event-data model or collections. |
 | Detector(s) | IDEA, with the exact Delphes card revision in the configuration reference. |
-| Statistics | 100,000 final events at one energy point. Keep the pilot count separate. |
+| Statistics | 100,000 final events at one energy point. Keep the trial count separate. |
 | Estimated Size | About 0.75 GB for 100,000 events, using 7.5 kB/event measured on Winter 2023 IDEA Delphes Z-to-qq datasets. Check the estimate for the chosen software and output content. |
 | Target Campaign | The requested campaign, using its agreed spelling. |
 | Key4hep Stack | The exact agreed release. Replace `latest` with that reference. |

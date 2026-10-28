@@ -39,11 +39,11 @@ The contact can organise the work without personally resolving every generator, 
 
 - Check whether an existing dataset or request already covers the need.
 - Resolve the process definition, collision energy, generation settings, filters and intended final processing stage.
-- Distinguish the requested final statistics from the event count used for a small validation run.
+- Distinguish the requested final statistics from the event count of the trial.
 - Identify the generator card, detector configuration and software release precisely.
 - Agree the physics and resources decisions with the responsible people.
 - Record the campaign assignment and who will follow the production.
-- Inspect the output of a small validation run before scaling to the requested statistics.
+- Inspect the output of the trial before scaling to the requested statistics.
 
 These are review criteria. A form accepting a request does not by itself establish that the configuration is ready to run.
 

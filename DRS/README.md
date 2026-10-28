@@ -55,7 +55,7 @@ The requester selects **New Request** and CERN SSO supplies their identity. MC c
 | Format | The requested format, for example EDM4hep or HepMC3. It must be compatible with the requested processing. |
 | Detector(s) | Required by the form for stages beyond Generation. Give the concept and identify the relevant configuration precisely. |
 | Statistics | The requested event count. Say whether it is before or after a filter, and specify counts per energy point or configuration where needed. |
-| Estimated Size | An estimate with units and its basis. For full-simulation datasets, consult the **Event Size** section of the [k4Bench reconstruction dashboard](https://k4bench-dashboard.app.cern.ch/reconstruction) for the relevant configuration. Update the estimate using the validation run when possible. |
+| Estimated Size | An estimate with units and its basis. For full-simulation datasets, consult the **Event Size** section of the [k4Bench reconstruction dashboard](https://k4bench-dashboard.app.cern.ch/reconstruction) for the relevant configuration. Update the estimate using the trial when possible. |
 | Target Campaign | A requested campaign preference, entered as text. Actual assignment uses the separate **Campaign** control after review. |
 | Key4hep Stack | The exact release agreed for the production. Resolve this before launching. |
 | Due Date and Priority | The useful delivery date and its reason. Priorities available are Low, Medium, High and Critical. Agree relative priority with the responsible people. |
@@ -75,7 +75,7 @@ Read the full request and check:
 - Is the dataset needed, and can an existing dataset cover it?
 - Are the process, collision conditions, requested output and event count unambiguous?
 - Are the generator card, detector configuration and software release identified?
-- Are the size and timescale plausible, and is a pilot benchmark needed?
+- Are the size and timescale plausible, and is a trial needed to benchmark them?
 - Who must agree the physics and resources decisions?
 
 Use **Add a comment…** and **Comment** to ask the requester for clarification. Leave **Internal (coordinators only)** unchecked for a question the requester should see. Internal notes are suitable for coordinator discussion.
@@ -111,10 +111,10 @@ After the approvals and campaign placement have been agreed:
 1. Find **Campaign** on the request detail page.
 2. Select the agreed campaign and read the confirmation before applying it. The normal entry point is an Approved request. Assignments belonging to a closed campaign are locked.
 3. Check the campaign name, request status and activity record.
-4. As the MC contact, write or adapt the production configuration, check its inputs, run the dry run and submit through the iLCDirac command line. Follow the [iLCDirac tutorial](../iLCDirac/README.md) for the small pilot and subsequent monitoring.
+4. As the MC contact, write or adapt the production configuration, check its inputs, run the dry run and submit through the iLCDirac command line. Follow the [iLCDirac tutorial](../iLCDirac/README.md) for the small trial and subsequent monitoring.
 5. When the production system supplies identifiers, return to the request. **Production IDs** appears when a campaign is assigned.
 6. Enter the real positive numeric **DIRAC transformation ID for each process and each step**, label it with the process and step, and select **Add**. For example, three processes with Gen, Sim and Rec require nine transformation IDs. A label such as `ZH / Gen` identifies the process and step.
-7. Add a comment linking the FCCDIRAC attempt directory (see [Record the production in FCCDIRAC](../iLCDirac/production-config.md#record-the-production-in-fccdirac)) and the pilot budget. Inspect the transformation and associated jobs in iLCDirac, and report the observed status and useful validation information.
+7. Add a comment linking the FCCDIRAC attempt directory (see [Record the production in FCCDIRAC](../iLCDirac/production-config.md#record-the-production-in-fccdirac)) and the trial budget. Inspect the transformation and associated jobs in iLCDirac, and report the observed status and useful validation information.
 
 Entering a production ID stores a reference in the DRS. It does not create the corresponding production. A DRS request number and a job number identify different objects and should be labelled accordingly.
 

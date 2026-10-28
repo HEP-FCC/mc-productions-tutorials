@@ -8,7 +8,7 @@ Start with the first relevant error. Keep the DRS request, configuration revisio
 | Proxy creation fails | Certificate setup, password, expiry, FCC registration and the requested group. Ask the instructors to check the account mapping. |
 | `fcc_user` works but live production is denied | Use a `fcc_prod` proxy. MC contacts registered in fcc-auth have been assigned this group for training. Production submission requires `ProductionManagement`; ask the instructors to check the mapping if access fails. |
 | The web portal cannot authenticate you | Import your personal GRID certificate and private key into the browser and check its validity. A command-line proxy does not install the browser certificate. |
-| A placeholder or wrong pilot budget is found while reviewing the configuration or dry run | Fill your CERN username, keep `campaign = summer2026` and restore the one-task, 100-event pilot budget before submission. |
+| A placeholder or wrong trial budget is found while reviewing the configuration or dry run | Fill your CERN username, keep `campaign = summer2026` and restore the one-task, 100-event trial budget before submission. |
 | Card is missing or the energy is inconsistent | Run from the attempt directory containing the cards. Compare `energies` with the Pythia `Beams:eCM` setting. |
 | Unknown application option | Check the exact section and option spelling against the installed version. Application keys map to setter names. |
 | Parameter-list lengths disagree | Pair process, energy, event count, steering file and task count explicitly. Start with one process and one energy. |

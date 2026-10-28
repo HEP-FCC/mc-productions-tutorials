@@ -19,7 +19,7 @@ The [FCC Production Manager Guide](https://ilcdirac-doc.web.cern.ch/DOC/Files/Pr
 | Output event content | `OutputCard`; the executable writes EDM4hep output |
 | Software | `softwareVersion` and the application's `Version` |
 | Configuration package | `configPackage` and `configVersion`, used for configuration lookup |
-| Pilot statistics | `eventsPerJobs` and `numberOfTasks` |
+| Trial statistics | `eventsPerJobs` and `numberOfTasks` |
 | Campaign and naming | `campaign`, `processes`, `prodGroup` and `additionalName` |
 | Output storage | `outputSE` |
 
@@ -38,7 +38,7 @@ This produces Delphes output even though the transformation type is `Gen`. Addin
 
 ## CLD full simulation: follow-up example
 
-CLD full simulation with separate Gen, Sim and Rec stages is part of the campaign baseline. A complete worked CLD example will be added after the training; it is not required for today's live exercise. It will need agreed generation, CLD detector and reconstruction configurations, software versions and a checked pilot.
+CLD full simulation with separate Gen, Sim and Rec stages is part of the campaign baseline. A complete worked CLD example will be added after the training; it is not required for today's live exercise. It will need agreed generation, CLD detector and reconstruction configurations, software versions and a checked trial.
 
 The current command supports the following stage structure:
 
@@ -51,7 +51,7 @@ ProdTypes = Gen, Sim, Rec
 
 This is a structural example. Each application needs its own complete, compatible configuration. Use an agreed full-simulation recipe for a real request. The separate Gaudi application names allow different settings for generation, simulation and reconstruction.
 
-## Keep the pilot small and explicit
+## Keep the trial small and explicit
 
 For the single-process generation example:
 
@@ -110,7 +110,7 @@ The example sets `move = False`. `MoveStatus` and `finalOutputSE` concern option
 - The executable and cards implement the requested physics and final stage.
 - The metadata energy matches the generator card.
 - The software and card revisions are recorded.
-- The pilot budget, naming, campaign and storage destination are correct.
+- The trial budget, naming, campaign and storage destination are correct.
 - The dry-run XML and messages match the intended single transformation.
 
 Return to [Launching productions](README.md).

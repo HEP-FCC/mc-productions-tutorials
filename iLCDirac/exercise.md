@@ -1,4 +1,4 @@
-# Exercise: follow a request through a pilot production
+# Exercise: follow a request through a trial production
 
 Use the DRS request, campaign and event budget identified by the instructors. Work in pairs if useful. This exercise follows the workflow in the [main tutorial](README.md).
 
@@ -6,20 +6,20 @@ Use the DRS request, campaign and event budget identified by the instructors. Wo
 
 Open the existing DRS request. Record its URL and agreed process, energy, detector, output format, software release and requested total statistics. Identify any unresolved question before preparing the production.
 
-For the bundled ZH example, use the corresponding ZH request. Keep its 100-event pilot separate from the full requested statistics.
+For the bundled ZH example, use the corresponding ZH request. Keep its 100-event trial separate from the full requested statistics.
 
 ## 2. Prepare and explain
 
-Prepare the [worked example](examples/README.md), keep `campaign = summer2026`, fill your CERN username in the unique name and review the local cards and pilot budget. Explain to your partner:
+Prepare the [worked example](examples/README.md), keep `campaign = summer2026`, fill your CERN username in the unique name and review the local cards and trial budget. Explain to your partner:
 
 - Which file defines the generator physics?
 - Which settings determine the event content and detector response?
 - Why does this combined Pythia8/Delphes example use `ProdTypes = Gen`?
-- How many tasks and events does this pilot request?
+- How many tasks and events does this trial request?
 
 ## 3. Inspect the dry run
 
-Run without `-x`. Locate the workflow XML and identify the application, software, output location and pilot budget. Explain why any displayed dry-run ID, including `12345`, is not evidence of a production submission.
+Run without `-x`. Locate the workflow XML and identify the application, software, output location and trial budget. Explain why any displayed dry-run ID, including `12345`, is not evidence of a production submission.
 
 ## 4. Submit and find the work
 
@@ -33,14 +33,14 @@ In your attempt directory, `productions/summer2026/DRS-<n>/attempt1/` of your FC
 
 ## 6. Return to the DRS
 
-Add the real production reference and the link to the FCCDIRAC attempt directory to the request. Write a short factual update with the pilot budget and observed status. Identify the output checks still needed before scaling or publishing the dataset.
+Add the real production reference and the link to the FCCDIRAC attempt directory to the request. Write a short factual update with the trial budget and observed status. Identify the output checks still needed before scaling or publishing the dataset.
 
 | Evidence | Your result |
 | --- | --- |
 | DRS request URL | |
 | FCCDIRAC attempt directory and pull request | |
 | Client and Key4hep versions | |
-| Pilot task/event budget | |
+| Trial task/event budget | |
 | Transformation ID | |
 | Associated job ID and observed status | |
 | Transformation LFN and full EOS path, if available | |
