@@ -1,24 +1,21 @@
 # DRS: Dataset Request System
 
-Speakers: Pantelis Kontaxakis and Juraj Smiesko  
-Training of the MC Production contacts, Autumn 2026
-
 The DRS records FCC dataset requests, their review and the references needed to follow their production.
 
 - [Production DRS](https://fcc-drs.web.cern.ch/)
 - [Test DRS](https://fcc-drs-test.web.cern.ch/)
 - [Overall workflow and contact responsibilities](workflow-and-responsibilities.md)
 
-**For the practical session:** use the production DRS and the clearly labelled training request identified by the instructors. Keep the agreed training scope and follow their cleanup instructions. If a live exercise is unavailable, use the supplied worksheet.
+**Trying it out:** use the production DRS. Requests you create for the tutorial go to the **Documentation and Trainings** group, with a title starting with `[TUTORIAL]`. Ask for their [cleanup](../README.md#cleaning-up-after-the-tutorial) when you are done.
 
 Version reference: DRS source commit [`ceaab4a`](https://github.com/HEP-FCC/fcc-drs/tree/ceaab4ab98d478458d559730ccebd299c693c6f8).
 
 ## 1. Access and role
 
-1. Open the agreed DRS instance and use **Login** with CERN SSO.
+1. Open the [production DRS](https://fcc-drs.web.cern.ch/) and use **Login** with CERN SSO.
 2. Open **Requests**. A first login normally creates a **requester** account.
-3. The instructors will grant **coordinator** access during the training. Confirm your role and the coordinator group for your physics group once access is assigned.
-4. On the demonstration request, check that the coordinator controls are available. The **Campaigns** navigation item is also available to coordinators.
+3. Ask the DRS admins for the **coordinator** role (see [Access](../README.md#access)). Confirm your role and the coordinator group for your physics group once access is assigned.
+4. On any request, check that the coordinator controls are available. The **Campaigns** navigation item is also available to coordinators.
 5. Check your profile notification preferences and the coordinator group shown on the request. Email delivery also depends on the service configuration.
 
 | DRS role | Relevant capabilities |
@@ -80,7 +77,7 @@ Read the full request and check:
 
 Use **Add a comment…** and **Comment** to ask the requester for clarification. Leave **Internal (coordinators only)** unchecked for a question the requester should see. Internal notes are suitable for coordinator discussion.
 
-During the live exercise, check with the designated recipient that the expected email notification arrives and opens the correct request. If it does not arrive, record the observation and inspect notification preferences with the instructors. A visible comment alone does not prove email delivery.
+Check that the expected email notification arrives and opens the correct request; on your own `[TUTORIAL]` request you are the recipient. If it does not arrive, check your notification preferences on the **Profile** page. A visible comment alone does not prove email delivery.
 
 Keep a request **Under Review** while clarifications or decisions are pending. In the detail page, coordinators can adjust **Coordinator Group** and **Priority** when the responsible people agree the change.
 
@@ -124,11 +121,11 @@ The recommended completion check is to confirm the agreed output statistics, fil
 
 For a failed or interrupted production, record the relevant identifiers and useful error context. Agree whether the next action is a retry, a revised configuration or a change to the request.
 
-For the training, follow the instructors' cleanup procedure for the labelled requests and corresponding production objects. Setting a DRS request to Cancelled does not cancel its DIRAC transformations or jobs.
+For `[TUTORIAL]` requests, ask for the [cleanup](../README.md#cleaning-up-after-the-tutorial) of the request and its production objects. Setting a DRS request to Cancelled does not cancel its DIRAC transformations or jobs.
 
 ## 8. Practical exercise
 
-Work through [the request-review exercise](exercise.md). The exercise uses an illustrative physics request and does not supply a validated production recipe. Discuss your proposed clarifications and next steps with the instructors during the debrief.
+Work through [the request-review exercise](exercise.md). The exercise uses an illustrative physics request and does not supply a validated production recipe. Compare your proposed clarifications and next steps with the suggested points at its end.
 
 ## Help and sources
 

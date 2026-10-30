@@ -1,8 +1,8 @@
-# Single-process Pythia8 + Delphes training configuration.
+# Single-process Pythia8 + Delphes tutorial configuration.
 # Replace REPLACE_WITH_CERN_USERNAME before running the iLCDirac dry run.
-# Training campaign: summer2026. Clean up the training output afterwards.
-# Use the software and storage values agreed for the session.
-# Local detector/output cards are for training only; package them for production.
+# Test campaign: summer2026. Ask for the cleanup of the output afterwards.
+# Check that the software and storage values are still current.
+# Local detector/output cards are for the tutorial only; package them for production.
 
 [delphesapp]
 ExecutableName = DelphesPythia8_EDM4HEP
@@ -12,7 +12,7 @@ Version = key4hep_260408
 
 [Production Parameters]
 machine = ee
-prodGroup = mccontacts_training
+prodGroup = mccontacts_tutorial
 softwareVersion = key4hep_260408
 generatorApplication = delphesapp
 generatorSteeringFile = p8_ee_ZH_ecm240.cmd
@@ -25,7 +25,7 @@ campaign = summer2026
 energies = 240
 processes = ZH
 detectorModel = IDEA
-additionalName = training_REPLACE_WITH_CERN_USERNAME_attempt1
+additionalName = tutorial_REPLACE_WITH_CERN_USERNAME_attempt1
 
 productionLogLevel = VERBOSE
 outputSE = CERN-DST-EOS

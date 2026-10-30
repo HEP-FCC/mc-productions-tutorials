@@ -1,6 +1,6 @@
 # Exercise: follow a request through a trial production
 
-Use the DRS request, campaign and event budget identified by the instructors. Work in pairs if useful. This exercise follows the workflow in the [main tutorial](README.md).
+Use your `[TUTORIAL]` request from the [DRS exercise](../DRS/exercise.md), the `summer2026` test campaign and the event budget of the worked example. This exercise follows the workflow in the [main tutorial](README.md).
 
 ## 1. Identify the task
 
@@ -10,7 +10,7 @@ For the bundled ZH example, use the corresponding ZH request. Keep its 100-event
 
 ## 2. Prepare and explain
 
-Prepare the [worked example](examples/README.md), keep `campaign = summer2026`, fill your CERN username in the unique name and review the local cards and trial budget. Explain to your partner:
+Prepare the [worked example](examples/README.md), keep `campaign = summer2026`, fill your CERN username in the unique name and review the local cards and trial budget. Check that you can answer:
 
 - Which file defines the generator physics?
 - Which settings determine the event content and detector response?
@@ -23,9 +23,9 @@ Run without `-x`. Locate the workflow XML and identify the application, software
 
 ## 4. Submit and find the work
 
-When the instructors start the live-submission part, submit once with `-x`. Find the resulting transformation in iLCDirac. Record its real ID and one associated job ID when a job appears.
+When the dry run looks right, submit once with `-x`. Find the resulting transformation in iLCDirac. Record its real ID and one associated job ID when a job appears.
 
-Inspect the job's status and details. If it is not running yet, report the observed state. Use an existing demonstration production if the training job cannot finish during the session.
+Inspect the job's status and details. If it is not running yet, report the observed state and check again later.
 
 ## 5. Record the production in FCCDIRAC
 
@@ -46,10 +46,10 @@ Add the real production reference and the link to the FCCDIRAC attempt directory
 | Transformation LFN and full EOS path, if available | |
 | Validation completed and next action | |
 
-If production access is unavailable, complete preparation and the dry run where possible, then inspect the instructor's demonstration production. Do not invent IDs or submit through another person's credentials.
+If production access is unavailable, complete preparation and the dry run where possible, then inspect an existing summer2026 production in the web portal. Do not invent IDs or submit through another person's credentials.
 
 In the portal, right-click the transformation and open its details to obtain its output LFN. Prepend `/eos/experiment/fcc/prod` to obtain the full EOS path for DaMI.
 
-The training uses `summer2026`, so its output sits alongside real production output. Retain the exact training IDs and paths and follow the instructors' directions for cleanup after the session. A change of DRS status does not cancel DIRAC jobs.
+The tutorial uses the `summer2026` test campaign, so its output sits alongside other productions. Retain the exact IDs and paths and ask for the [cleanup](../README.md#cleaning-up-after-the-tutorial) when you are done. A change of DRS status does not cancel DIRAC jobs.
 
 Return to [Launching productions](README.md).
