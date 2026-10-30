@@ -38,7 +38,7 @@ This produces Delphes output even though the transformation type is `Gen`. Addin
 
 ## CLD full simulation: follow-up example
 
-CLD full simulation with separate Gen, Sim and Rec stages is part of the campaign baseline. A complete worked CLD example will be added after the training; it is not required for today's live exercise. It will need agreed generation, CLD detector and reconstruction configurations, software versions and a checked trial.
+CLD full simulation with separate Gen, Sim and Rec stages is part of the campaign baseline. A complete worked CLD example will be added later; it is not needed for the exercise. It will need agreed generation, CLD detector and reconstruction configurations, software versions and a checked trial.
 
 The current command supports the following stage structure:
 
@@ -68,17 +68,17 @@ The command pairs configured entries; it does not generate every possible proces
 
 ## Cards and version references
 
-The worked example keeps all three cards in the submission directory as a **training-only shortcut**. The current Delphes application accepts local detector and output cards and adds them to the input sandbox. It reads the Pythia8 card through its card-finding utility. Missing local files can otherwise trigger lookup in configured locations.
+The worked example keeps all three cards in the submission directory as a **tutorial-only shortcut**. The current Delphes application accepts local detector and output cards and adds them to the input sandbox. It reads the Pythia8 card through its card-finding utility. Missing local files can otherwise trigger lookup in configured locations.
 
-For normal productions, obtain the generator card from the requester through the DRS upload or from the maintained "golden cards" in [FCC-config](https://github.com/HEP-FCC/FCC-config). Package the detector and output cards in the configuration tarball selected by `configPackage` and `configVersion`. The pinned FCCDIRAC downloads are used only to reproduce the training example; FCCDIRAC records production history (see [Record the production in FCCDIRAC](#record-the-production-in-fccdirac)).
+For normal productions, obtain the generator card from the requester through the DRS upload or from the maintained "golden cards" in [FCC-config](https://github.com/HEP-FCC/FCC-config). Package the detector and output cards in the configuration tarball selected by `configPackage` and `configVersion`. The pinned FCCDIRAC downloads are used only to reproduce the tutorial example; FCCDIRAC records production history (see [Record the production in FCCDIRAC](#record-the-production-in-fccdirac)).
 
-For the training, local copies with known revisions make the chosen inputs unambiguous. Record the immutable source commit and your changes. The example's `key4hep_260408` and `key4hep-devel-6` values come from the referenced FCC configuration. Use them only when they match the session's available software and configuration package.
+For the tutorial, local copies with known revisions make the chosen inputs unambiguous. The example's `key4hep_260408` and `key4hep-devel-6` values come from the referenced FCC configuration. Check that this software and configuration package are still available before submitting.
 
-Do not use `latest` as the record of a production's software version. Do not add a fixed random seed to make all training jobs identical. Use the production workflow's seed handling and record the production and job IDs.
+Do not use `latest` as the record of a production's software version. Do not add a fixed random seed to make all jobs identical. Use the production workflow's seed handling and record the production and job IDs.
 
 ## Record the production in FCCDIRAC
 
-Every production is recorded in [FCCDIRAC](https://github.com/HEP-FCC/FCCDIRAC), so that anyone can read the exact configuration on GitHub without going through iLCDirac. This includes the training and test productions in the `summer2026` campaign.
+Every production is recorded in [FCCDIRAC](https://github.com/HEP-FCC/FCCDIRAC), so that anyone can read the exact configuration on GitHub without going through iLCDirac. This includes the tutorial and test productions in the `summer2026` campaign.
 
 - Prepare the `.conf` file and all cards (generator, detector, output) in `productions/<campaign>/DRS-<n>/attempt<k>/` of your FCCDIRAC clone, for example `productions/autumn2026/DRS-42/attempt1/`, and submit from that directory. Commit the `.conf` file and the cards; the logs and workflow XML stay local.
 - A submitted attempt is never changed. Any change to the configuration or a card is a new attempt: `attempt2`, `attempt3`, … Extending a production keeps its configuration and stays in the same attempt.
@@ -98,9 +98,9 @@ Every production is recorded in [FCCDIRAC](https://github.com/HEP-FCC/FCCDIRAC),
 
 ## Naming and output location
 
-For the training, use `campaign = summer2026` and the agreed process naming. The output is stored alongside summer2026 production output and requires cleanup after the session. These labels contribute to output paths and catalogue metadata. `prodGroup` groups transformations; `additionalName` helps distinguish attempts with otherwise identical names.
+For the tutorial, use the `summer2026` test campaign and the agreed process naming. The output is stored alongside the other summer2026 productions and needs a cleanup when you are done. These labels contribute to output paths and catalogue metadata. `prodGroup` groups transformations; `additionalName` helps distinguish attempts with otherwise identical names.
 
-Use a unique training suffix containing your CERN username and an attempt label. If a name already exists, inspect that production before deciding to create another one. Changing the suffix and resubmitting can create a second live production.
+Use a unique tutorial suffix containing your CERN username and an attempt label. If a name already exists, inspect that production before deciding to create another one. Changing the suffix and resubmitting can create a second live production.
 
 The example sets `move = False`. `MoveStatus` and `finalOutputSE` concern optional file-moving transformations. They do not disable generation or its normal output upload.
 

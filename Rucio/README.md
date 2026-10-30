@@ -1,7 +1,7 @@
 # Rucio
 
-> **Disabled for the moment** --- this section is not part of the current
-> training. The skeleton is kept for later.
+> **Not written yet** --- the productions do not use Rucio yet. The skeleton
+> is kept for later.
 
 Rucio manages the files produced by the productions: where they are stored,
 how many replicas exist, and how to find them.
