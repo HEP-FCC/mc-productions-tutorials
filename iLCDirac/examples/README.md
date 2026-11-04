@@ -23,7 +23,7 @@ cp "$tutorial_dir/iLCDirac/examples/pythia-delphes.conf.template" pythia_delphes
 
 A new attempt gets a new directory, `attempt2`, `attempt3`, …; do not reuse a directory that was already submitted.
 
-**Tutorial-only card source and layout:** the downloads below reproduce a pinned historical example from FCCDIRAC. For normal productions, obtain the generator card from the requester through the DRS upload or from the maintained "golden cards" in [FCC-config](https://github.com/HEP-FCC/FCC-config). The detector and output cards (`card_IDEA.tcl`, `edm4hep_IDEA.tcl`) should be included in the configuration tarball selected by `configPackage` and `configVersion`. Reading those two cards from the submission directory is a convenience used only for this tutorial. FCCDIRAC serves as the historical record of production configurations.
+**Tutorial-only card source and layout:** the downloads below reproduce a pinned historical example from FCCDIRAC. For normal productions, take the cards from the requester's DRS upload or from their reference repositories (see [Cards and version references](../production-config.md#cards-and-version-references)). The detector and output cards (`card_IDEA.tcl`, `edm4hep_IDEA.tcl`) should be included in the configuration tarball selected by `configPackage` and `configVersion`. Reading those two cards from the submission directory is a convenience used only for this tutorial. FCCDIRAC serves as the historical record of production configurations.
 
 For this tutorial, retrieve the three input cards from the pinned historical source:
 

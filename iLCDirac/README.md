@@ -64,7 +64,7 @@ Follow the [worked example](examples/README.md) to create an attempt directory i
 
 The example uses one process, one energy point, `eventsPerJobs = 100` and `numberOfTasks = 1`. Keep the full statistics requested in the DRS separate from this trial budget. The tutorial uses the `summer2026` test campaign; retain the unique tutorial name and check that the software version and storage element are still current. Its output is stored alongside the other summer2026 productions.
 
-The local-card layout and pinned FCCDIRAC downloads are tutorial-only shortcuts. For normal productions, use the requester's DRS generator card or a maintained FCC-config golden card, and include the detector and output cards in the configuration tarball selected by `configPackage` and `configVersion`.
+The local-card layout and pinned FCCDIRAC downloads are tutorial-only shortcuts. For normal productions, use the requester's DRS generator card or take the cards from their reference repositories (see [Cards and version references](production-config.md#cards-and-version-references)), and include the detector and output cards in the configuration tarball selected by `configPackage` and `configVersion`.
 
 Read [Production configuration](production-config.md), check the local input cards and review the one-task, 100-event trial budget. Use the iLCDirac dry run below to check the production configuration.
 

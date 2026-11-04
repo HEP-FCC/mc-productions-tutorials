@@ -70,7 +70,14 @@ The command pairs configured entries; it does not generate every possible proces
 
 The worked example keeps all three cards in the submission directory as a **tutorial-only shortcut**. The current Delphes application accepts local detector and output cards and adds them to the input sandbox. It reads the Pythia8 card through its card-finding utility. Missing local files can otherwise trigger lookup in configured locations.
 
-For normal productions, obtain the generator card from the requester through the DRS upload or from the maintained "golden cards" in [FCC-config](https://github.com/HEP-FCC/FCC-config). Package the detector and output cards in the configuration tarball selected by `configPackage` and `configVersion`. The pinned FCCDIRAC downloads are used only to reproduce the tutorial example; FCCDIRAC records production history (see [Record the production in FCCDIRAC](#record-the-production-in-fccdirac)).
+For normal productions, take the configuration files from their reference repositories:
+
+- [FCC-config](https://github.com/HEP-FCC/FCC-config): generator cards ("golden cards"), EDM4hep output cards for Delphes, and the configuration of detector concepts without their own repository.
+- [CLDConfig](https://github.com/key4hep/CLDConfig) for CLD.
+- [ILDConfig](https://github.com/iLCSoft/ILDConfig) for ILD.
+- [Delphes](https://github.com/delphes/delphes/tree/master/cards) for the Delphes detector cards.
+
+The requester can also provide the generator card through the DRS upload or ask for a specific version of a detector configuration. Package the detector and output cards in the configuration tarball selected by `configPackage` and `configVersion`. The pinned FCCDIRAC downloads are used only to reproduce the tutorial example; FCCDIRAC records production history (see [Record the production in FCCDIRAC](#record-the-production-in-fccdirac)).
 
 For the tutorial, local copies with known revisions make the chosen inputs unambiguous. The example's `key4hep_260408` and `key4hep-devel-6` values come from the referenced FCC configuration. Check that this software and configuration package are still available before submitting.
 
