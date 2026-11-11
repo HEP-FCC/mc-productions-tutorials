@@ -39,15 +39,45 @@ of the FCCSW forum, or write to
 fcc-ped-softwareandcomputing-mcproduction@cern.ch.
 
 
-## Format
+## How to follow it
 
-Each section is introduced with brief slides, then the participants work
-through the markdown material directly in this repo.
+The tutorial is self-paced: read the pages in the order above and try out
+each step. Before starting, complete the [Setup](Setup/README.md) and ask for
+the roles you need (see [Access](#access)).
+
+Everything you create while trying it out is labelled as a tutorial object
+(`[TUTORIAL]` DRS requests, the `summer2026` test campaign in iLCDirac). Keep
+their identifiers and ask for the cleanup when you are done, see
+[Cleaning up after the tutorial](#cleaning-up-after-the-tutorial).
 
 
-## Branches
+## Access
 
-Specific trainings/dates are tracked as branches or tags off `main`.
+The roles are granted by the administrators of each system. Ask for them at
+fcc-ped-softwareandcomputing-mcproduction@cern.ch:
+
+- FCC VO membership and the `fcc_prod` group, for launching productions
+- **coordinator** role in the [DRS](https://fcc-drs.web.cern.ch/)
+- **editor** role in [DaMI](https://fcc-dami.web.cern.ch/)
+
+
+## Cleaning up after the tutorial
+
+Tutorial objects live in the production systems, next to real ones. When you
+are done, write to fcc-ped-softwareandcomputing-mcproduction@cern.ch with:
+
+- the URL of your `[TUTORIAL]` DRS request
+- the transformation IDs and job IDs of your trial
+- the EOS path of its output
+- the UUID of any DaMI record you created
+
+Do not delete transformations or files yourself.
+
+
+## Past trainings
+
+The state of the material used at a training is kept as a tag, e.g.
+`training-2026-10-21`.
 
 
 ## License

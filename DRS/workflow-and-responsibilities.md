@@ -1,13 +1,10 @@
 # Overall workflow and responsibilities of MC Production contacts
 
-Speakers: Pantelis Kontaxakis and Juraj Smiesko  
-Training of the MC Production contacts, Autumn 2026
-
 ## Purpose
 
 A requester records the dataset need in the DRS. The MC Production contact then reviews that request and follows it through production to a usable dataset. The contact connects the requesting physicists, their physics group and the central production team, and keeps the request record understandable throughout the work.
 
-By the end of the training, a contact should be able to review an existing DRS request, write the production configuration, submit it through the iLCDirac command line, monitor the transformation and its jobs, and identify the output to share with the requester.
+After this tutorial, a contact should be able to review an existing DRS request, write the production configuration, submit it through the iLCDirac command line, monitor the transformation and its jobs, and identify the output to share with the requester.
 
 ## The workflow
 
@@ -18,9 +15,9 @@ By the end of the training, a contact should be able to review an existing DRS r
 | Prepare and run | iLCDirac | The MC contact writes and checks the production configuration, submits it through the command line and monitors the transformation and its jobs. | FCCDIRAC attempt directory, software release, validation results and production identifiers. |
 | Check and publish | Output storage and DaMI | Check the delivered files and statistics, publish its metadata and tell the requester how to access the dataset. | Validation summary, dataset reference and access information. |
 
-The DRS records requests and coordination decisions. The iLCDirac part of the training covers job submission and monitoring. An approved request, or a request assigned to a campaign, still needs the corresponding production work.
+The DRS records requests and coordination decisions. The iLCDirac part of the tutorial covers job submission and monitoring. An approved request, or a request assigned to a campaign, still needs the corresponding production work.
 
-Rucio is outside the scope of this training. Follow the storage and dataset-publication procedure demonstrated by the instructors.
+Rucio is not used by the productions yet. The output is stored on EOS and published in DaMI, as described in the [DaMI tutorial](../DaMI/README.md).
 
 ## Responsibilities in practice
 
@@ -75,4 +72,4 @@ Keep these references together, with labels explaining their meaning. The DRS **
 
 ## Source basis
 
-Workflow scope: [MC Productions Tutorials](https://github.com/HEP-FCC/mc-productions-tutorials/tree/e747b4a1bd250d08e66564d7807a0147d0d8ccf1). DRS behaviour: [source snapshot](https://github.com/HEP-FCC/fcc-drs/tree/ceaab4ab98d478458d559730ccebd299c693c6f8), checked 19 October 2026. The MC-contact submission responsibility follows the [training review discussion](https://github.com/HEP-FCC/mc-productions-tutorials/pull/1#discussion_r4324063479).
+Workflow scope: [MC Productions Tutorials](https://github.com/HEP-FCC/mc-productions-tutorials/tree/e747b4a1bd250d08e66564d7807a0147d0d8ccf1). DRS behaviour: [source snapshot](https://github.com/HEP-FCC/fcc-drs/tree/ceaab4ab98d478458d559730ccebd299c693c6f8), checked 19 October 2026. The MC-contact submission responsibility follows the [tutorial review discussion](https://github.com/HEP-FCC/mc-productions-tutorials/pull/1#discussion_r4324063479).

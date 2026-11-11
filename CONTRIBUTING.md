@@ -1,11 +1,11 @@
 # Contributing
 
-This repo is a living tutorial: the instructors maintain the material between
-trainings, and participants are welcome to send fixes for anything they hit
-while following it.
+This repo is a living, self-paced tutorial: the maintainers keep the material
+current, and readers are welcome to send fixes for anything they hit while
+following it.
 
 
-## For participants
+## For readers
 
 - Found a typo, a broken command, or a step that doesn't match the current
   setup of the systems? Open an issue, or fork the repo and open a pull
@@ -18,14 +18,15 @@ while following it.
 - Small, focused PRs (one fix per PR) are easier to review than bundled ones.
 
 
-## For instructors
+## For maintainers
 
 - New material goes under the relevant system folder
   (`Setup|DRS|iLCDirac|Rucio|DaMI/`).
-- `main` holds the canonical, up-to-date version of the tutorial. Cut a
-  branch (or tag) per training/date before making training-specific tweaks
-  (campaign names, pinned stack versions, schedule-specific trimming), and
-  merge generally-useful fixes back to `main`.
+- `main` holds the canonical, up-to-date, self-paced version of the
+  tutorial. Keep it free of references to a specific session (dates, rooms,
+  speakers, "the instructors"). Tag the state used at a training, e.g.
+  `training-2026-10-21`, and put any session-specific tweaks on a branch
+  off that tag.
 - When a command or a production script changes, note the iLCDirac and
   Key4hep stack versions it was validated against in the relevant README.
 

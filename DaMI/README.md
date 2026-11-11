@@ -1,8 +1,5 @@
 # DaMI: Dataset Metadata Interface
 
-Speakers: Pantelis Kontaxakis and Juraj Smiesko  
-Training of the MC Production contacts, Autumn 2026
-
 DaMI is the metadata catalogue for FCC physics datasets, formerly the FCC Physics Events website. It helps analysts find a dataset, understand its configuration and identify where its files are stored. The MC Production contact keeps the catalogue record consistent with the production and the original dataset request.
 
 - [DaMI](https://fcc-dami.web.cern.ch/)
@@ -11,11 +8,11 @@ DaMI is the metadata catalogue for FCC physics datasets, formerly the FCC Physic
 - [DRS walkthrough](../DRS/README.md)
 - [iLCDirac tutorial](../iLCDirac/README.md)
 
-**For the practical session:** open the DaMI instance announced by the instructors and use the dataset assigned to you. Make changes only to that record.
+**Trying it out:** use the production DaMI. Search, inspect and export any record. Create and edit only your own tutorial record, the one for your trial from the [iLCDirac tutorial](../iLCDirac/README.md), and ask for its [cleanup](../README.md#cleaning-up-after-the-tutorial) when you are done.
 
 ## 1. Access and responsibilities
 
-Open the agreed instance. In the account menu, select **Sign in** and complete CERN authentication. The account badge shows the current role.
+Open [DaMI](https://fcc-dami.web.cern.ch/). In the account menu, select **Sign in** and complete CERN authentication. The account badge shows the current role.
 
 | Role | Relevant capabilities |
 | --- | --- |
@@ -23,13 +20,13 @@ Open the agreed instance. In the account menu, select **Sign in** and complete C
 | Editor | Viewer capabilities plus creating datasets, editing metadata and deleting catalogue entries. |
 | Admin | Editor capabilities plus granting and revoking editor access through **Users**. |
 
-A signed-in user without an editor or administrator grant has the viewer role. The instructors will grant editor access to MC contacts during the training. Check that your account shows the Editor role once it is assigned. DaMI roles are separate from DRS roles, FCC VO membership and production permissions.
+A signed-in user without an editor or administrator grant has the viewer role. Ask the DaMI admins for the editor role (see [Access](../README.md#access)) and check that your account shows the Editor role once it is assigned. DaMI roles are separate from DRS roles, FCC VO membership and production permissions.
 
 MC contacts need editor access for the creation and editing tasks in this tutorial. With viewer access, you can complete the search, inspection and export steps.
 
 ## 2. Find a dataset and inspect its metadata
 
-1. Use the search field to find the dataset named by the instructor.
+1. Use the search field to find a dataset, for example by its process name.
 2. Narrow the results using the navigation categories: accelerator, stage, campaign, detector and file type.
 3. Expand the dataset metadata. **All Metadata** can expand the displayed records together.
 4. Read the dataset name, campaign, processing stage, detector, event count and available configuration information.
@@ -54,7 +51,7 @@ The MC contact inserts datasets into DaMI manually through the interface or with
 | Production traceability | Original DRS request, transformation IDs labelled by process and step, and validation reference. |
 | Limitations | Incomplete statistics, known issues and the intended use of the dataset. |
 
-The campaign metadata fields will be discussed during the training, including the requester and MC contact. After the discussion, replace the table above with the agreed list of metadata fields required for the campaign, including their names, definitions and units. DaMI supports fields such as `n-events`, `path`, `size`, `description`, `comment` and `status`, and permits additional metadata. Completing the form does not establish that the dataset passed validation.
+The metadata fields required for a campaign, including the requester and MC contact, are still to be agreed. Until then, use the table above as a checklist. DaMI supports fields such as `n-events`, `path`, `size`, `description`, `comment` and `status`, and permits additional metadata. Completing the form does not establish that the dataset passed validation.
 
 ## 4. Add a dataset
 
@@ -76,7 +73,7 @@ Use this route with metadata prepared by the MC contact for datasets that have p
 
 1. Open **Add Data**, then **Bulk Upload (JSON)**.
 2. Select **Select JSON File**. The file must contain an object with a `datasets` array.
-3. Leave **Force Override Locked Fields** unchecked for the training.
+3. Leave **Force Override Locked Fields** unchecked.
 4. Select **Upload Datasets** and inspect the counts of created, updated and failed records, together with any lock conflicts.
 5. Search for each affected dataset and verify the resulting metadata. Entries are processed independently, so a batch can succeed only in part.
 
@@ -93,7 +90,7 @@ The exported JSON shape is suitable for the application's import workflow, but r
 
 Metadata fields can be locked to protect values from later updates. Review a lock conflict with the responsible editor instead of using force override as a routine fix. Changing a stored event count, file path or normalisation value requires checking the corresponding production information.
 
-For the exercise, change only the comment on a designated test record. Dataset deletion is outside the participant exercise.
+For the exercise, change only the comment on your own tutorial record. Dataset deletion is outside the exercise.
 
 ## 6. Export metadata and hand the dataset to an analyst
 
@@ -131,16 +128,14 @@ Distributed-computing capabilities are still evolving. An API is planned for pro
 
 ## 8. Practical exercise
 
-Estimated time: 10 minutes. Use the instance and reference dataset identified by the instructors.
-
-1. Find the reference dataset and record its name, campaign, stage, detector, event count and UUID.
+1. Find an existing dataset, for example a Winter 2023 IDEA Delphes dataset, and record its name, campaign, stage, detector, event count and UUID.
 2. Identify its full EOS path, validation reference, requester and MC contact. Note any information that is missing.
 3. Export only that dataset using **Download Selected**. Inspect the JSON and identify the UUID and metadata fields.
-4. If the instructors assign you a validated dataset that is not yet catalogued, add its actual metadata with **Add Dataset** using the agreed fields and categories. Search first to avoid duplicating an existing record. Otherwise, follow the creation demonstration without adding another record.
-5. On a record assigned to you for editing, make the agreed comment change, save and reload. Leave other records unchanged.
+4. If you produced a trial in the [iLCDirac tutorial](../iLCDirac/README.md), add its metadata with **Add Dataset**: campaign `summer2026`, a dataset name starting with `tutorial_` and your CERN username, and the full EOS path of its output. Search first to avoid duplicating an existing record. Without a trial, read the creation steps without adding a record.
+5. On your own tutorial record, change the comment, save and reload. Leave other records unchanged.
 6. Explain what validation evidence and metadata are needed before a new dataset can be published.
 
-Discuss your answers with the instructors. With viewer access, complete the inspection and export steps while editor access is being assigned. Follow the instructors' directions for cleanup of any training entries.
+With viewer access, complete the inspection and export steps while editor access is being assigned. Ask for the [cleanup](../README.md#cleaning-up-after-the-tutorial) of your tutorial record when you are done.
 
 ## Help and sources
 

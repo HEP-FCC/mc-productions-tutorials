@@ -21,7 +21,8 @@ it might be outdated, so please ask if something does not work.
 * Register in the FCC VO, as described in the FCC tutorial:
   https://github.com/HEP-FCC/fcc-tutorials/blob/main/5-distributed-computing/RegisteringToFccVO.md
 * Check in https://fcc-auth.cern.ch/ that you are in the `fcc_prod` group and
-  that your iLCDirac nickname is set
+  that your iLCDirac nickname is set. If not, ask at
+  fcc-ped-softwareandcomputing-mcproduction@cern.ch
 
 
 ## Step 3: iLCDirac client and proxy
@@ -32,3 +33,13 @@ it might be outdated, so please ask if something does not work.
   (https://ilcdirac-doc.web.cern.ch/DOC/Files/UserGuide/ilcdiracclient.html)
 * Create the production proxy, as shown in the
   [iLCDirac tutorial](../iLCDirac/README.md)
+
+
+## Step 4: GitHub and FCCDIRAC
+
+* Productions are prepared and submitted from within a clone of
+  [FCCDIRAC](https://github.com/HEP-FCC/FCCDIRAC), and recorded there through
+  pull requests
+* Create a GitHub account, add an SSH key from the host you submit from
+  (https://docs.github.com/en/authentication/connecting-to-github-with-ssh),
+  and fork FCCDIRAC
