@@ -14,7 +14,7 @@ This is an illustrative tutorial request. Its numbers and physics choices are fo
 
 1. Read the existing fields, attachments and discussion. Check for related requests or datasets before proposing additional production.
 2. Identify the clarifications needed in five areas: collision energy; process and generator configuration; detector configuration; software version; output format and content. An agreed campaign configuration can answer several of these without requiring the requester to specify every technical detail.
-3. Post a short public comment asking for the missing information. As the requester of your own tutorial request, check that the DRS email notification arrives and opens this request.
+3. Post a short public comment asking for the missing information. The DRS does not email you about your own comments. Checking email delivery is optional: ask another person, for example another MC contact, to comment on your request and check that the notification arrives and opens this request.
 4. Once the requester clarifies the need, update the existing record. Which information belongs in **Description**, and which belongs in a dedicated field? Use the mapping below.
 5. Suppose Physics is Approved and Resources is Pending. Resources approval currently belongs to the DRS admins. You can prepare the configuration and review its dry run while that decision is pending; resolve the approvals before a live launch.
 6. Once both approvals and campaign placement are agreed, write or adapt the production configuration and submit through the iLCDirac command line. Continue in the [production-launching tutorial](../iLCDirac/README.md) with its small trial budget. Its ZH example is a different process from this hadronic-Z review example.
@@ -53,7 +53,7 @@ Keep the request Under Review while clarifications or decisions remain outstandi
 - **Detector:** identify the exact IDEA card and any requested changes.
 - **Software:** identify a reproducible release and configuration revision.
 - **Output:** specify the event-data model, required collections and processing stage.
-- **Notifications:** a saved public comment and delivery of its email notification are separate observations. Check both.
+- **Notifications:** a saved public comment and delivery of its email notification are separate observations. The author of a comment gets no email about it, so checking delivery needs a comment from another person.
 - **Approvals:** any MC contact of the request's group can give Physics approval; DRS admins give Resources approval in the current workflow.
 - **Submission:** the contact prepares the configuration and uses the iLCDirac command line once the request is ready for production.
 - **Monitoring:** inspect each transformation and its associated jobs. Record IDs per process and step. Three processes with Gen, Sim and Rec produce nine transformation IDs.

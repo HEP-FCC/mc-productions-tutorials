@@ -77,7 +77,7 @@ Read the full request and check:
 
 Use **Add a comment…** and **Comment** to ask the requester for clarification. Leave **Internal (coordinators only)** unchecked for a question the requester should see. Internal notes are suitable for coordinator discussion.
 
-Check that the expected email notification arrives and opens the correct request; on your own `[TUTORIAL]` request you are the recipient. If it does not arrive, check your notification preferences on the **Profile** page. A visible comment alone does not prove email delivery.
+The DRS does not email you about your own comments. To check email delivery (optional), ask another person to comment on your `[TUTORIAL]` request and check that the notification arrives and opens the correct request. If it does not arrive, check your notification preferences on the **Profile** page. A visible comment alone does not prove email delivery.
 
 Keep a request **Under Review** while clarifications or decisions are pending. In the detail page, coordinators can adjust **Coordinator Group** and **Priority** when the responsible people agree the change.
 
